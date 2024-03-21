@@ -1,0 +1,1 @@
+web: gunicorn husman_moderna.wsgi
