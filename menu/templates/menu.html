@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Menu</title>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Meny - {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<title>Menu</title>
 </head>
+
 <body>
     <h1>Menu</h1>
     <ul>
         {% for dish in dishes %}
-            <li>{{ dish.name }} - {{ dish.description }} - {{ dish.price }}</li>
+        <li>{{ dish.name }} - {{ dish.description }} - {{ dish.price }}</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Husman Moderna{% endblock %}</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Header -->
+        <h1>Husman Moderna</h1>
+        <!-- Navigation -->
+    </header>
+
+    <main>
+        <!-- Main content -->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Footer -->
+        <p>&copy; 2024 Husman Moderna. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript link -->
+</body>
+</html>
