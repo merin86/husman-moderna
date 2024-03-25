@@ -13,4 +13,4 @@ def menu(request):
         'main_courses': main_courses,
         'desserts': desserts,
     }
-    return render(request, 'menu.html', context)
+    return render(request, 'menu/menu.html', context)
