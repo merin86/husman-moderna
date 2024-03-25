@@ -1,19 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Meny - {{ block.super }}{% endblock %}
+{% block title %}Menu - {{ block.super }}{% endblock %}
 
 {% block content %}
-
-<title>Menu</title>
-</head>
-
-<body>
+<div class="container">
     <h1>Menu</h1>
-    <ul>
-        {% for dish in dishes %}
-        <li>{{ dish.name }} - {{ dish.description }} - {{ dish.price }}</li>
+
+    <h2>Appetizers</h2>
+    <ul class="list-group">
+        {% for dish in appetizers %}
+        <li class="list-group-item">{{ dish.name }} - {{ dish.description }} - {{ dish.price }}</li>
         {% endfor %}
     </ul>
 
+    <h2>Main Courses</h2>
+    <ul class="list-group">
+        {% for dish in main_courses %}
+        <li class="list-group-item">{{ dish.name }} - {{ dish.description }} - {{ dish.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Desserts</h2>
+    <ul class="list-group">
+        {% for dish in desserts %}
+        <li class="list-group-item">{{ dish.name }} - {{ dish.description }} - {{ dish.price }}</li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}
