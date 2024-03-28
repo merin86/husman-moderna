@@ -1,0 +1,110 @@
+/* Reset CSS to normalize styles across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Basic typography */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Header */
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.menu-item .price {
+    color: #27ae60;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    flex: 1 0 auto;
+    background-color: #fff;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background-image: url('../images/husman-moderna.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Footer */
+footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icons {
+    height: 1rem;
+    margin: 0.5rem;
+    fill: #fff;
+}
+
+.info-text {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.copyright {
+    margin: 20px 0 5px 0;
+    font-size: 0.8rem;
+}
