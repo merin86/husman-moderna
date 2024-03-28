@@ -65,15 +65,39 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="icon-container">
-            <img src="{% static 'images/icons/location-dot-solid.svg' %}" alt="Location Icon" class="icons">
-            <img src="{% static 'images/icons/clock-solid.svg' %}" alt="Clock Icon" class="icons">
-            <img src="{% static 'images/icons/phone-solid.svg' %}" alt="Phone Icon" class="icons">
-            <img src="{% static 'images/icons/envelope-solid.svg' %}" alt="Envelope Icon" class="icons">
+    <footer class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-6 col-md-3 text-center">
+                <img src="{% static 'images/icons/location-dot-solid.svg' %}" alt="Location Icon" class="icons">
+                <p class="info-text">
+                    Blomstervägen 79
+                    <br>
+                    131 97, Stockholm
+                </p>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <img src="{% static 'images/icons/clock-solid.svg' %}" alt="Clock Icon" class="icons">
+                <p class="info-text">
+                    Mon-Sun:
+                    <br>
+                    11:00-23:00
+                </p>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <img src="{% static 'images/icons/phone-solid.svg' %}" alt="Phone Icon" class="icons">
+                <p class="info-text">
+                    555-326-9500
+                </p>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <img src="{% static 'images/icons/envelope-solid.svg' %}" alt="Envelope Icon" class="icons">
+                <p class="info-text">
+                    contact@husman.com
+                </p>
+            </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2024 Husman Moderna. All rights reserved.</p>
+        <div class="col-8 offset-2 text-center">
+            <p aria-label="Copyright" class="copyright">&copy; 2024 Husman Moderna. All rights reserved.</p>
         </div>
     </footer>
 
