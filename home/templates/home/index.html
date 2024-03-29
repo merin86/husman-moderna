@@ -9,10 +9,41 @@
         <h1>Welcome to Husman Moderna</h1>
     </div>
 </div>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-    type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
-    Lorem Ipsum.</p>
+<div class="card-group">
+    <div class="card" id="card1">
+        <img src="{% static 'images/ragu.jpg' %}" class="card-img-top" alt="Ragu Bolognese">
+        <div class="card-body">
+            <div class="button-container">
+                <a class="btn btn-custom card-title-button" href="{% url 'menu' %}">See The Menu</a>
+            </div>
+            <p class="card-text">Explore our inspiring menu filled with classic Swedish dishes that have been given a
+                modern twist. Each meal is carefully prepared to blend traditional home cooking with innovative flavor
+                combinations, designed to satisfy even the most discerning palate. Welcome to a culinary experience
+                where tradition meets innovation in every bite.</p>
+        </div>
+    </div>
+    <div class="card" id="card2">
+        <img src="{% static 'images/book-table.jpg' %}" class="card-img-top" alt="Restaurant table">
+        <div class="card-body">
+            <div class="button-container">
+                <a class="btn btn-custom card-title-button" href="#">Book Reservation</a>
+            </div>
+            <p class="card-text">Reserve a table at our restaurant and immerse yourself in the warmth of home-cooked
+                meals, all within the inviting ambiance of our dining space. Experience the perfect blend of homely
+                comfort and the delight of dining out.</p>
+        </div>
+    </div>
+    <div class="card" id="card3">
+        <img src="{% static 'images/leave-review.jpg' %}" class="card-img-top" alt="Writing in book">
+        <div class="card-body">
+            <div class="button-container">
+                <a class="btn btn-custom card-title-button" href="#">Leave Review</a>
+            </div>
+            <p class="card-text">We treasure your feedback and invite you to share your dining experience with us.
+                Whether it's a compliment, a suggestion, or a way we can improve, your insights are invaluable in
+                helping us enhance our service. Please leave a review and let us know how your visit
+                was. Your voice matters to us, and we look forward to hearing from you.</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
