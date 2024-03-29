@@ -109,12 +109,9 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(255, 255, 255, 0.4);
 }
 
-.card-group {
-    gap: 4rem;
-}
-
 .card-img-top {
     height: 15rem;
+    object-fit: cover;
 }
 
 #card1 {
