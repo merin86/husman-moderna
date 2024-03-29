@@ -33,6 +33,7 @@ body {
 .nav-link {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .menu-item {
@@ -71,6 +72,21 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
 }
 
+.title {
+    position: relative;
+    z-index: 1;
+}
+
+.title span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(33, 32, 32, 0.7);
+}
+
+.title h1 {
+    text-shadow: 2px 2px 4px rgba(33, 32, 32, 0.7);
+}
+
 .hero-container {
     position: relative;
     width: 100%;
@@ -81,6 +97,16 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .card-group {
