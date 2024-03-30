@@ -141,6 +141,37 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(57, 96, 127, 0.8);
 }
 
+/* Styles for Login page */
+.btn-signup {
+    background-color: rgba(57,96,127,255);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Positioning for logged in message */
+.text-end {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+}
+
+/* Hides "Forgot your password?" text */
+.helptext a {
+    display: none;
+}
+
+.btn-signup:hover {
+    background-color: rgba(57, 96, 127, 0.8);
+}
+
 /* Styles for menu page */
 .menu-container {
     max-width: 800px;
@@ -201,4 +232,17 @@ footer {
 .copyright {
     margin: 20px 0 5px 0;
     font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .text-end {
+        font-size: 14px;
+        right: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .text-end {
+        display: none;
+    }
 }
