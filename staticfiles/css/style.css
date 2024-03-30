@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display&display=swap');
+
 /* Reset CSS to normalize styles across browsers */
 * {
     margin: 0;
@@ -9,26 +11,38 @@ html, body {
     height: 100%;
 }
 
-/* Basic typography */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif !important;
     line-height: 1.6;
-    background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
 
 }
 
 /* Header */
+.navbar-custom {
+    background-color: rgba(255,204,0,255);
+    padding: 0;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
 .logo {
     height: 100px;
     width: auto;
+    transition: opacity 0.3s ease;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+.navbar-brand:hover .logo {
+    opacity: 0.8;
+}
+
+.nav-link {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .menu-item {
@@ -63,6 +77,25 @@ main {
     background-color: #fff;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+.title {
+    position: relative;
+    z-index: 1;
+}
+
+.title span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(33, 32, 32, 0.7);
+}
+
+.title h1 {
+    text-shadow: 2px 2px 4px rgba(33, 32, 32, 0.7);
+}
+
 .hero-container {
     position: relative;
     width: 100%;
@@ -75,6 +108,58 @@ main {
     align-items: center;
 }
 
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.card-img-top {
+    height: 15rem;
+    object-fit: cover;
+}
+
+#card1 {
+    margin: 2rem;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 2rem;
+}
+
+#card2 {
+    margin: 2rem;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 2rem;
+}
+
+#card3 {
+    margin: 2rem;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 2rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.card-title-button {
+    font-size: 1.25rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.btn-custom {
+    background-color: rgba(57,96,127,255);
+    color: #fff;
+}
+
+.btn-custom:hover {
+    background-color: rgba(57, 96, 127, 0.8);
+}
 
 /* Footer */
 footer {
