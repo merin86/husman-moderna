@@ -20,6 +20,8 @@ body {
 }
 
 /* Header */
+
+/* Navbar styles */
 .navbar-custom {
     background-color: rgba(255,204,0,255);
     padding: 0;
@@ -45,32 +47,6 @@ body {
     font-weight: 700;
 }
 
-.menu-item {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.menu-item h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.menu-item p {
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.menu-item .price {
-    color: #27ae60;
-    font-size: 20px;
-    font-weight: bold;
-}
-
 /* Main Content */
 main {
     flex: 1 0 auto;
@@ -81,6 +57,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
 }
 
+/* Title styles (home page) */
 .title {
     position: relative;
     z-index: 1;
@@ -96,6 +73,7 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 2px 2px 4px rgba(33, 32, 32, 0.7);
 }
 
+/* Hero image styles */
 .hero-container {
     position: relative;
     width: 100%;
@@ -118,6 +96,7 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(255, 255, 255, 0.4);
 }
 
+/* Card styles */
 .card-img-top {
     height: 15rem;
     object-fit: cover;
@@ -141,6 +120,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 2rem;
 }
 
+/* Styles for buttons in cards */
 .button-container {
     display: flex;
     justify-content: center;
@@ -161,6 +141,32 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(57, 96, 127, 0.8);
 }
 
+/* Styles for menu page */
+.menu-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-section:not(:last-of-type) {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.list-group {
+    margin: 20px 0;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.dish-description {
+    font-style: italic;
+}
+
 /* Footer */
 footer {
     flex-shrink: 0;
@@ -177,18 +183,21 @@ footer {
     flex-wrap: wrap;
 }
 
+/* Styles for icons in footer */
 .icons {
     height: 1rem;
     margin: 0.5rem;
     fill: #fff;
 }
 
+/* Styles for info text in footer */
 .info-text {
     margin-top: 0;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
 }
 
+/* Styles for copyright text in footer */
 .copyright {
     margin: 20px 0 5px 0;
     font-size: 0.8rem;
