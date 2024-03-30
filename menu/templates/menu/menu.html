@@ -4,28 +4,49 @@
 {% block title %}Menu - {{ block.super }}{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Menu</h1>
-
-    <h2>Appetizers</h2>
-    <ul class="list-group">
-        {% for dish in appetizers %}
-        <li class="list-group-item">{{ dish.name }} - {{ dish.description }} - {{ dish.price }}</li>
-        {% endfor %}
-    </ul>
-
-    <h2>Main Courses</h2>
-    <ul class="list-group">
-        {% for dish in main_courses %}
-        <li class="list-group-item">{{ dish.name }} - {{ dish.description }} - {{ dish.price }}</li>
-        {% endfor %}
-    </ul>
-
-    <h2>Desserts</h2>
-    <ul class="list-group">
-        {% for dish in desserts %}
-        <li class="list-group-item">{{ dish.name }} - {{ dish.description }} - {{ dish.price }}</li>
-        {% endfor %}
-    </ul>
+<!-- Menu title -->
+<div class="hero-container">
+    <div class="title position-absolute top-50 start-50 translate-middle text-center">
+        <h1>Our Menu</h1>
+    </div>
+</div>
+<!-- Menu -->
+<div class="menu-container">
+    <div class="menu-section">
+        <h2>Appetizers</h2>
+        <ul class="list-group">
+            {% for dish in appetizers %}
+            <li class="list-group-item">
+                <h5>{{ dish.name }}</h5>
+                <p class="dish-description">{{ dish.description }}</p>
+                <p>{{ dish.price }} €</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="menu-section">
+        <h2>Main Courses</h2>
+        <ul class="list-group">
+            {% for dish in main_courses %}
+            <li class="list-group-item">
+                <h5>{{ dish.name }}</h5>
+                <p class="dish-description">{{ dish.description }}</p>
+                <p>{{ dish.price }} €</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="menu-section">
+        <h2>Desserts</h2>
+        <ul class="list-group">
+            {% for dish in desserts %}
+            <li class="list-group-item">
+                <h5>{{ dish.name }}</h5>
+                <p class="dish-description">{{ dish.description }}</p>
+                <p>{{ dish.price }} €</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 {% endblock %}
