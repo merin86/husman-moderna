@@ -155,6 +155,14 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.3s;
 }
 
+/* Positioning for logged in message */
+.text-end {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+}
+
 /* Hides "Forgot your password?" text */
 .helptext a {
     display: none;
@@ -224,4 +232,17 @@ footer {
 .copyright {
     margin: 20px 0 5px 0;
     font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .text-end {
+        font-size: 14px;
+        right: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .text-end {
+        display: none;
+    }
 }
