@@ -141,6 +141,29 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(57, 96, 127, 0.8);
 }
 
+/* Styles for Login page */
+.btn-signup {
+    background-color: rgba(57,96,127,255);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hides "Forgot your password?" text */
+.helptext a {
+    display: none;
+}
+
+.btn-signup:hover {
+    background-color: rgba(57, 96, 127, 0.8);
+}
+
 /* Styles for menu page */
 .menu-container {
     max-width: 800px;
