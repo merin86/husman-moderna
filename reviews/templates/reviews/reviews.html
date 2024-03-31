@@ -1,27 +1,48 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <h2>Reviews</h2>
-    {% for review in reviews %}
-    <div class="review">
-        <h3>{{ review.title }}</h3>
-        <p><strong>By:</strong> {{ review.user.username }}</p>
-        <p><strong>Rating:</strong> {{ review.rating }}/10</p>
-        <p><strong>Review:</strong> {{ review.content }}</p>
-        <p><strong>Posted on:</strong> {{ review.created_at|date:"Y-m-d H:i" }}</p>
-    </div>
-    {% empty %}
-    <p>There are no reviews to display.</p>
-    {% endfor %}
+<div class="container mt-5">
+    <div class="row">
+        <!-- Add a new review form on the left side -->
+        <div class="col-md-6 review-form">
+            {% if user.is_authenticated %}
+            <h3 class="review-titles">Add a new review</h3>
+            <form method="post" action="{% url 'reviews:review_create' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_title" class="form-label">Title*</label>
+                    {{ form.title }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_content" class="form-label">Content*</label>
+                    {{ form.content }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_rating" class="form-label">Rating*</label>
+                    {{ form.rating }}
+                </div>
+                <button type="submit" class="btn btn-custom send-review-button">Send review</button>
+            </form>
+            {% else %}
+            <p>Please <a href="{% url 'account_login' %}">log in</a> to add a review.</p>
+            {% endif %}
+        </div>
 
-    {% if user.is_authenticated %}
-    <h2>Add a new review</h2>
-    <form method="post" action="{% url 'reviews:review_create' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Send review</button>
-    </form>
-    {% endif %}
+        <!-- List of approved reviews on the right side -->
+        <div class="col-md-6">
+            <h3 class="review-titles">Reviews</h3>
+            {% for review in reviews %}
+            <div class="review mb-4">
+                <h4>{{ review.title }}</h4>
+                <p><strong>By:</strong> {{ review.user.username }}</p>
+                <p><strong>Rating:</strong> {{ review.rating }}/10</p>
+                <p><strong>Review:</strong> {{ review.content }}</p>
+                <p><strong>Posted on:</strong> {{ review.created_at|date:"Y-m-d H:i" }}</p>
+            </div>
+            {% empty %}
+            <p>There are no reviews to display.</p>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}
