@@ -1,10 +1,16 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from .models import Review
 from .forms import ReviewForm
 from django.contrib.auth.decorators import login_required
 
 def review_list(request):
-    reviews = Review.objects.filter(approved=True)
+    reviews_list = Review.objects.filter(approved=True).order_by('-created_at')
+    paginator = Paginator(reviews_list, 3)
+
+    page_number = request.GET.get('page')
+    reviews = paginator.get_page(page_number)
+
     form = ReviewForm()
     return render(request, 'reviews/reviews.html', {'reviews': reviews, 'form': form})
 
