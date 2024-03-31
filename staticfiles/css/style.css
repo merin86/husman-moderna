@@ -198,6 +198,96 @@ h1, h2, h3, h4, h5, h6 {
     font-style: italic;
 }
 
+/* Styles for review page */
+.review-titles {
+    margin-bottom: 2rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.review-form .form-control,
+.review-form input,
+.review-form textarea,
+.review-form select {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.review-form .rating-input {
+    width: 7%;
+    margin: auto;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border: 2px solid #007bff;
+    box-shadow: 0 0 5px #007bff;
+}
+
+.send-review-button {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 2rem;
+}
+
+/* Styles for approved reviews */
+.review {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.review h4 {
+    margin-top: 0;
+}
+
+.review p {
+    margin-bottom: 10px;
+}
+
+.review p:last-child {
+    margin-bottom: 0;
+}
+
+.review strong {
+    color: #333;
+}
+
+/* Styles for pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination {
+    font-size: 14px;
+}
+
+.pagination a {
+    background-color: rgba(57,96,127,255);;
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: rgba(57, 96, 127, 0.8);
+    color: #333;
+}
+
+.pagination .current-page {
+    margin: 0 10px;
+}
+
 /* Footer */
 footer {
     flex-shrink: 0;
@@ -234,13 +324,14 @@ footer {
     font-size: 0.8rem;
 }
 
+/* Media query: tablets (768px) */
 @media (max-width: 768px) {
     .text-end {
         font-size: 14px;
         right: 100px;
     }
 }
-
+/* Media query: phones (576px) */
 @media (max-width: 576px) {
     .text-end {
         display: none;
