@@ -234,13 +234,14 @@ footer {
     font-size: 0.8rem;
 }
 
+/* Media query: tablets (768px) */
 @media (max-width: 768px) {
     .text-end {
         font-size: 14px;
         right: 100px;
     }
 }
-
+/* Media query: phones (576px) */
 @media (max-width: 576px) {
     .text-end {
         display: none;
