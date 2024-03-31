@@ -5,7 +5,8 @@ from django.contrib.auth.decorators import login_required
 
 def review_list(request):
     reviews = Review.objects.filter(approved=True)
-    return render(request, 'reviews/review_list.html', {'reviews': reviews})
+    form = ReviewForm()
+    return render(request, 'reviews/reviews.html', {'reviews': reviews, 'form': form})
 
 @login_required
 def review_create(request):
@@ -18,4 +19,4 @@ def review_create(request):
             return redirect('reviews:review_list')
     else:
         form = ReviewForm()
-    return render(request, 'reviews/review_form.html', {'form': form})
+    return redirect('reviews:review_list')

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Reviews</h2>
+    {% for review in reviews %}
+    <div class="review">
+        <h3>{{ review.title }}</h3>
+        <p><strong>By:</strong> {{ review.user.username }}</p>
+        <p><strong>Rating:</strong> {{ review.rating }}/10</p>
+        <p><strong>Review:</strong> {{ review.content }}</p>
+        <p><strong>Posted on:</strong> {{ review.created_at|date:"Y-m-d H:i" }}</p>
+    </div>
+    {% empty %}
+    <p>There are no reviews to display.</p>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+    <h2>Add a new review</h2>
+    <form method="post" action="{% url 'reviews:review_create' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send review</button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
