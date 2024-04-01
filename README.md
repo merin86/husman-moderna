@@ -207,7 +207,11 @@ CSS Validator
 
 #### Websites
 
+- [Django documentation](https://docs.djangoproject.com/en/5.0/) has been used frequently to create the web page.
+
 - This previous PP4 project has been used as a source of inspiration and also as a tool, using DevTools, for various codes (especially in the creation of the menu and footer): [Tasty Bites](https://tasty-bites-rb-427304cf20b7.herokuapp.com/)
+
+- [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/) have been used to get the right classes.
 
 - This page has been used as a tool for creating pseudo-classes: [Meet the Pseudo Class Selectors](https://css-tricks.com/pseudo-class-selectors/)
 

@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import Review
 
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('title', 'user', 'rating', 'created_at')
-    list_filter = ('created_at', 'rating')
+    list_display = ('title', 'user', 'rating', 'created_at', 'approved')
+    list_filter = ('approved', 'created_at', 'rating')
     search_fields = ('title', 'content')
     actions = ['approve_reviews']
 
