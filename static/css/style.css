@@ -259,14 +259,15 @@ input:focus, textarea:focus, select:focus {
 
 /* Styles for reviews pending approval */
 .pending-review {
-    background-color: #f0f0f0;
-    border-left: 5px solid #ffa500;
+    background-color: #6c6767;
+    border: 5px solid rgba(255,204,0,255);
     padding-left: 15px;
 }
 
 .pending-notice {
-    color: #ffa500;
+    color: rgba(255,204,0,255);
     font-weight: bold;
+    margin: 0.5rem;
 }
 
 /* Styles for pagination */

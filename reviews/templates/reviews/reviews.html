@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="container mt-5">
@@ -41,8 +42,9 @@
                 <!-- Update and Delete links for review owner -->
                 {% if review.user == request.user %}
                 <a href="{% url 'reviews:review_update' review.id %}" class="btn btn-info">Edit</a>
-                <a href="{% url 'reviews:review_delete' review.id %}" class="btn btn-danger"
-                    onclick="return confirm('Are you sure you want to delete this review?');">Delete</a>
+                <a href="javascript:void(0);" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#deleteConfirmationModal"
+                    data-delete-url="{% url 'reviews:review_delete' review.id %}">Delete</a>
                 {% endif %}
                 {% if not review.approved %}
                 <p class="pending-notice">This review is waiting for approval.</p>
@@ -64,5 +66,28 @@
             </div>
         </div>
     </div>
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmationModalLabel">Delete Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your comment? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <a href="#" class="btn btn-danger" id="deleteReviewConfirmBtn">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+{% endblock %}
+
+{% block extras %}
+<script src="{% static 'js/reviews.js' %}"></script>
 {% endblock %}
