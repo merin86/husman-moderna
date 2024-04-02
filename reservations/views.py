@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from .forms import ReservationForm
 from .models import Reservation
 from django.contrib.auth.decorators import login_required
@@ -10,13 +10,17 @@ def book_reservation(request):
         if form.is_valid():
             reservation = form.save(commit=False)
             reservation.user = request.user
+            reservation.time = form.cleaned_data.get('time')
             reservation.save()
-            return redirect('my_reservations')
+            return redirect('reservations:my_reservations')
     else:
         form = ReservationForm()
     return render(request, 'reservations/book_reservation.html', {'form': form})
+
 
 @login_required
 def my_reservations(request):
     reservations = Reservation.objects.filter(user=request.user)
     return render(request, 'reservations/my_reservations.html', {'reservations': reservations})
+
+

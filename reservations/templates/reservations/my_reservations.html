@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}My Reservations{% endblock %}
+
+{% block content %}
+<!-- My Reservations title -->
+<div class="hero-container">
+    <div class="title position-absolute top-50 start-50 translate-middle text-center">
+        <h1>My Reservations</h1>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        {% for reservation in reservations %}
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Reservation for {{ reservation.first_name }} {{ reservation.last_name }}</h5>
+                    <p class="card-text">Date: {{ reservation.date }} at {{ reservation.time }}</p>
+                    <p class="card-text">Guests: {{ reservation.guests }}</p>
+                    <p class="card-text">Phone: {{ reservation.phone }}</p>
+                    {% if reservation.email %}
+                    <p class="card-text">Email: {{ reservation.email }}</p>
+                    {% endif %}
+                    {% if reservation.message %}
+                    <p class="card-text">Message: {{ reservation.message }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <p>You have no reservations.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

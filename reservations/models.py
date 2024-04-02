@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reservations')
     date = models.DateField()
+    time = models.TimeField()
     guests = models.PositiveIntegerField()
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
