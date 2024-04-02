@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Reservation - {{ block.super }}{% endblock %}
+
+{% block content %}
+<!-- Book Reservation title -->
+<div class="hero-container">
+    <div class="title position-absolute top-50 start-50 translate-middle text-center">
+        <h1>Book Reservation</h1>
+    </div>
+</div>
+
+<!-- Reservation Form -->
+<div class="container reservation-container mt-5">
+    <div class="row">
+        <div class="col-md-12 reservation-form">
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_date" class="form-label">Date*</label>
+                    {{ form.date }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_guests" class="form-label">Number of Guests*</label>
+                    {{ form.guests }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_first_name" class="form-label">First Name*</label>
+                    {{ form.first_name }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_last_name" class="form-label">Last Name*</label>
+                    {{ form.last_name }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_phone" class="form-label">Phone*</label>
+                    {{ form.phone }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_email" class="form-label">Email (Optional):</label>
+                    {{ form.email }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_message" class="form-label">Message (Optional):</label>
+                    {{ form.message }}
+                </div>
+                <button type="submit" class="btn btn-custom send-review-button">Book Now!</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

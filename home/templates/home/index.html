@@ -34,7 +34,7 @@
                 <img src="{% static 'images/book-table.jpg' %}" class="card-img-top img-fluid" alt="Restaurant table">
                 <div class="card-body">
                     <div class="button-container">
-                        <a class="btn btn-custom card-title-button" href="#">Book Reservation</a>
+                        <a class="btn btn-custom card-title-button" href="{% url 'reservations:book_reservation' %}">Book Reservation</a>
                     </div>
                     <p class="card-text">Reserve a table at our restaurant and immerse yourself in the warmth of
                         home-cooked

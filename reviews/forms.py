@@ -8,3 +8,6 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ['title', 'content', 'rating']
+        widgets = {
+            'content': forms.Textarea(attrs={'class': 'content-textarea'}),
+        }

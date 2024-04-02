@@ -198,6 +198,27 @@ h1, h2, h3, h4, h5, h6 {
     font-style: italic;
 }
 
+/* Styles for reservation page */
+.reservation-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reservation-form label {
+    display: block;
+}
+
+.reservation-form input,
+.reservation-form textarea,
+.reservation-form select {
+    width: 100%;
+}
+
+.message-textarea {
+    resize: none;
+}
+
 /* Styles for review page */
 .review-titles {
     margin-bottom: 2rem;
@@ -214,6 +235,10 @@ h1, h2, h3, h4, h5, h6 {
 .review-form select {
     width: 100%;
     margin-bottom: 20px;
+}
+
+.content-textarea {
+    resize: none;
 }
 
 .review-form .rating-input {
