@@ -35,7 +35,7 @@ def edit_reservation(request, reservation_id):
             return redirect('reservations:my_reservations')
     else:
         form = ReservationForm(instance=reservation)
-    return render(request, 'reservations/book_reservation.html', {'form': form})
+    return render(request, 'reservations/book_reservation.html', {'form': form, 'is_editing': True})
 
 
 @login_required

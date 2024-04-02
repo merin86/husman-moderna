@@ -20,7 +20,10 @@
                     <label for="id_rating" class="form-label">Rating (1-10)*</label>
                     {{ form.rating }}
                 </div>
-                <button type="submit" class="btn btn-custom send-review-button">Update</button>
+                <div class="d-flex justify-content-start">
+                    <button type="submit" class="btn btn-custom send-review-button me-2">Update</button>
+                    <button type="button" onclick="history.back();" class="btn btn-secondary send-review-button">Close</button>
+                </div>
             </form>
         </div>
     </div>
