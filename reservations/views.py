@@ -9,10 +9,19 @@ def book_reservation(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
         if form.is_valid():
+            date = form.cleaned_data['date']
+
+            existing_reservation = Reservation.objects.filter(user=request.user, date=date).exists()
+
+            if existing_reservation:
+                messages.error(request, "You already have a reservation on this date.")
+                return render(request, 'reservations/book_reservation.html', {'form': form})
+
             reservation = form.save(commit=False)
             reservation.user = request.user
             reservation.time = form.cleaned_data.get('time')
             reservation.save()
+            messages.success(request, "Your reservation has been successfully booked.")
             return redirect('reservations:my_reservations')
     else:
         form = ReservationForm()
@@ -31,7 +40,19 @@ def edit_reservation(request, reservation_id):
     if request.method == 'POST':
         form = ReservationForm(request.POST, instance=reservation)
         if form.is_valid():
+            date = form.cleaned_data['date']
+
+            existing_reservation = Reservation.objects.filter(
+                user=request.user, 
+                date=date
+            ).exclude(id=reservation_id).exists()
+
+            if existing_reservation:
+                messages.error(request, "You already have a reservation on this date.")
+                return render(request, 'reservations/book_reservation.html', {'form': form, 'is_editing': True})
+
             form.save()
+            messages.success(request, "Your reservation has been successfully updated.")
             return redirect('reservations:my_reservations')
     else:
         form = ReservationForm(instance=reservation)

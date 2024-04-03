@@ -4,6 +4,7 @@ from .models import Review
 from .forms import ReviewForm
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 def review_list(request):
@@ -27,6 +28,7 @@ def review_create(request):
             review = form.save(commit=False)
             review.user = request.user
             review.save()
+            messages.success(request, "Your review has been submitted and is awaiting approval.")
             return redirect('reviews:review_list')
     else:
         form = ReviewForm()
@@ -42,6 +44,7 @@ def review_update(request, review_id):
             review = form.save(commit=False)
             review.approved = False
             review.save()
+            messages.info(request, "Your review has been updated and is awaiting reapproval.")
             return redirect('reviews:review_list')
     else:
         form = ReviewForm(instance=review)
@@ -52,4 +55,5 @@ def review_update(request, review_id):
 def review_delete(request, review_id):
     review = get_object_or_404(Review, id=review_id, user=request.user)
     review.delete()
+    messages.success(request, "Your review has been successfully deleted.")
     return redirect('reviews:review_list')

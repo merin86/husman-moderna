@@ -49,7 +49,9 @@
                     {{ form.message }}
                 </div>
                 <button type="submit" class="btn btn-custom send-review-button">Book Now!</button>
+                {% if is_editing %}
                 <button type="button" onclick="history.back();" class="btn btn-secondary send-review-button">Close</button>
+                {% endif %}
             </form>
         </div>
     </div>
