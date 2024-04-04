@@ -1,6 +1,9 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import AboutPage
 
 def about(request):
-    return render(request, 'about/about.html')
+    about_page = AboutPage.objects.first()
+    context = {
+        'about_page': about_page
+    }
+    return render(request, 'about/about.html', context)

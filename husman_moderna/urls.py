@@ -27,5 +27,6 @@ urlpatterns = [
     path('menu/', include('menu.urls')),
     path('reservations/', include('reservations.urls')),
     path('reviews/', include('reviews.urls')),
+    path('summernote/', include('django_summernote.urls')),
     path('', RedirectView.as_view(url='/home/', permanent=True)),
 ]

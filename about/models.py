@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class AboutPage(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return "About Page Content"
