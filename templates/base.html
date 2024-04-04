@@ -62,7 +62,7 @@
                         </li>
                         {% endif %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="{% url 'about' %}">About</a>
                         </li>
                     </ul>
                 </div>
@@ -73,7 +73,7 @@
     <!-- Main content -->
     <main>
         {% if messages %}
-        <div class="container mt-3">
+        <div class="container mt-3 alert-dismissible">
             {% for message in messages %}
             <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
                 {{ message }}
@@ -138,6 +138,8 @@
     {% block extras %}
     {% endblock %}
 
+    <!-- Custom JavaScript for auto-dismissing messages -->
+    <script src="{% static 'js/auto_dismiss_messages.js' %}"></script>
 </body>
 
 </html>
