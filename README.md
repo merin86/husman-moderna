@@ -231,6 +231,8 @@ CSS Validator
 
 All images in this project are taken from [Pexels](https://www.pexels.com/) and then resized via [TinyPNG](https://tinypng.com/)
 
+Video on about page was taken from [Pexels](https://www.pexels.com/) and resized with [Cloud Convert](https://cloudconvert.com/). Later it was uploaded via [Vimeo](https://vimeo.com/), converted to a GIF file with a URL added to the "About" page.
+
 ## Acknowledgment
 
 I would like to thank my mentor, Jubril Akolade, for all the help he has given me.
