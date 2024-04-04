@@ -368,6 +368,11 @@ footer {
         font-size: 14px;
         right: 100px;
     }
+
+    .about-gif {
+        max-height: 400px;
+        object-fit: cover;
+    }
 }
 /* Media query: phones (576px) */
 @media (max-width: 576px) {
