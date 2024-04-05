@@ -4,14 +4,17 @@
 {% block title %}Menu - {{ block.super }}{% endblock %}
 
 {% block content %}
-<!-- Menu title -->
+
+<!-- Hero section with the menu title -->
 <div class="hero-container">
     <div class="title position-absolute top-50 start-50 translate-middle text-center">
         <h1>Our Menu</h1>
     </div>
 </div>
-<!-- Menu -->
+
+<!-- Menu container -->
 <div class="menu-container">
+    <!-- Appetizers section -->
     <div class="menu-section">
         <h2>Appetizers</h2>
         <ul class="list-group">
@@ -24,6 +27,7 @@
             {% endfor %}
         </ul>
     </div>
+    <!-- Main Courses section -->
     <div class="menu-section">
         <h2>Main Courses</h2>
         <ul class="list-group">
@@ -36,6 +40,7 @@
             {% endfor %}
         </ul>
     </div>
+    <!-- Desserts section -->
     <div class="menu-section">
         <h2>Desserts</h2>
         <ul class="list-group">

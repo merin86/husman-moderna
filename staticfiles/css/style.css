@@ -1,12 +1,14 @@
+/* Importing Google fonts for use throughout the website */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display&display=swap');
 
-/* Reset CSS to normalize styles across browsers */
+/* General Reset - Ensuring consistent styling across all browsers */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Basic styling for the entire page */
 html, body {
     height: 100%;
 }
@@ -19,7 +21,7 @@ body {
 
 }
 
-/* Header */
+/* Header styles */
 
 /* Navbar styles */
 .navbar-custom {
@@ -47,7 +49,7 @@ body {
     font-weight: 700;
 }
 
-/* Main Content */
+/* Main Content Styling */
 main {
     flex: 1 0 auto;
     background-color: #fff;
@@ -73,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 2px 2px 4px rgba(33, 32, 32, 0.7);
 }
 
-/* Hero image styles */
+/* Hero Image Styling */
 .hero-container {
     position: relative;
     width: 100%;
@@ -86,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
+/* Adding a light overlay to hero images for better text contrast */
 .hero-container::before {
     content: '';
     position: absolute;
@@ -96,31 +99,20 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(255, 255, 255, 0.4);
 }
 
-/* Card styles */
+/* Card Styling for various sections */
 .card-img-top {
     height: 15rem;
     object-fit: cover;
 }
 
-#card1 {
+/* Individual card styling */
+#card1, #card2, #card3 {
     margin: 2rem;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 2rem;
 }
 
-#card2 {
-    margin: 2rem;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 2rem;
-}
-
-#card3 {
-    margin: 2rem;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 2rem;
-}
-
-/* Styles for buttons in cards */
+/* Button Styling within Cards */
 .button-container {
     display: flex;
     justify-content: center;
@@ -155,6 +147,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.3s;
 }
 
+.btn-signup:hover {
+    background-color: rgba(57, 96, 127, 0.8);
+}
+
 /* Positioning for logged in message */
 .text-end {
     position: absolute;
@@ -166,10 +162,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Hides "Forgot your password?" text */
 .helptext a {
     display: none;
-}
-
-.btn-signup:hover {
-    background-color: rgba(57, 96, 127, 0.8);
 }
 
 /* Styles for menu page */

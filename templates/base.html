@@ -10,48 +10,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Dynamic page title -->
     <title>{% block title %}Husman Moderna{% endblock %}</title>
-    <!-- Favicon -->
+    <!-- Favicon links -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS for styling -->
     {% block extra_css %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     {% endblock %}
-    <!-- Custom CSS -->
+    <!-- Custom stylesheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- Header section -->
     <header>
-        <!-- Navigation -->
+        <!-- Navigation bar -->
         <nav class="navbar navbar-expand-lg navbar-custom">
             <div class="container-fluid">
-                <!-- Logo -->
+                <!-- Website logo -->
                 <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logga.jpg' %}"
                         alt="Husman Moderna Logo" class="logo"></a>
+                <!-- Responsive navigation toggle button -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- Navigation links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         {% if user.is_authenticated %}
-                        <!-- My Reservations Link for logged in users -->
+                        <!-- Link to user's reservations if logged in -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == '/my_reservations/' %}active{% endif %}"
                                 href="{% url 'reservations:my_reservations' %}">My Reservations</a>
                         </li>
+                        <!-- Logout link -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                                 href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
+                        <!-- Signup and login links for visitors -->
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
                                 href="{% url 'account_signup' %}">Sign Up</a>
@@ -61,6 +66,7 @@
                                 href="{% url 'account_login' %}">Login</a>
                         </li>
                         {% endif %}
+                        <!-- About page link -->
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'about' %}">About</a>
                         </li>
@@ -70,8 +76,9 @@
         </nav>
     </header>
 
-    <!-- Main content -->
+    <!-- Main content area -->
     <main>
+        <!-- Displaying flash messages dynamically -->
         {% if messages %}
         <div class="container mt-3 alert-dismissible">
             {% for message in messages %}
@@ -82,11 +89,13 @@
             {% endfor %}
         </div>
         {% endif %}
+        <!-- Displays user login status -->
         {% if user.is_authenticated %}
         <p class="text-end m-3">You are logged in as {{ user }}</p>
         {% else %}
         <p class="text-end m-3">You are not logged in</p>
         {% endif %}
+        <!-- Placeholder for main content of child templates -->
         {% block content %}
         {% endblock %}
     </main>
@@ -94,6 +103,7 @@
     <!-- Footer -->
     <footer class="container-fluid">
         <div class="row justify-content-between">
+            <!-- Contact details -->
             <div class="col-6 col-md-3 text-center">
                 <img src="{% static 'images/icons/location-dot-solid.svg' %}" alt="Location Icon" class="icons">
                 <p class="info-text">
@@ -123,18 +133,20 @@
                 </p>
             </div>
         </div>
+        <!-- Copyright notice -->
         <div class="col-8 offset-2 text-center">
             <p aria-label="Copyright" class="copyright">&copy; 2024 Husman Moderna. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript link -->
+    <!-- JavaScript resources for Bootstrap -->
     {% block onload_js %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
         integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {% endblock %}
 
+    <!-- Placeholder block for additional scripts or styles specific to child templates -->
     {% block extras %}
     {% endblock %}
 

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import AboutPage
 
+
+# Displays the content of the About page
 def about(request):
     about_page = AboutPage.objects.first()
     context = {

@@ -6,6 +6,11 @@ from django.contrib import messages
 
 @login_required
 def book_reservation(request):
+    """
+    Allows logged-in users to book a new reservation. 
+    Validates the form to ensure the reservation does not conflict with an existing one on the same date for the user. 
+    Displays a success message and redirects to the reservations list upon successful booking.
+    """
     if request.method == 'POST':
         form = ReservationForm(request.POST)
         if form.is_valid():
@@ -30,12 +35,20 @@ def book_reservation(request):
 
 @login_required
 def my_reservations(request):
+    """
+    Displays a list of reservations made by the logged-in user.
+    """
     reservations = Reservation.objects.filter(user=request.user)
     return render(request, 'reservations/my_reservations.html', {'reservations': reservations})
 
 
 @login_required
 def edit_reservation(request, reservation_id):
+    """
+    Allows logged-in users to edit an existing reservation.
+    Checks for date conflicts with other reservations by the same user, excluding the current reservation.
+    Updates the reservation upon validation and displays a success message.
+    """
     reservation = get_object_or_404(Reservation, id=reservation_id, user=request.user)
     if request.method == 'POST':
         form = ReservationForm(request.POST, instance=reservation)
@@ -61,6 +74,10 @@ def edit_reservation(request, reservation_id):
 
 @login_required
 def delete_reservation(request, pk):
+    """
+    Allows logged-in users to delete an existing reservation.
+    Deletes the reservation and displays a success message.
+    """
     reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
     if request.method == "POST":
         reservation.delete()

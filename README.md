@@ -83,6 +83,8 @@ Text
 
 ### Future Features
 
+* Creating logic that ensures that double bookings do not take place at the restaurant, i.e. that there is a block if the restaurant is fully booked during a specific day/time.
+
 ### Features Not Included
 
 

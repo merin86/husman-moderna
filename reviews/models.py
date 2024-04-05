@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 
+
+# The Review model to store user reviews
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
     title = models.CharField(max_length=100, null=False, blank=False)
@@ -13,5 +15,6 @@ class Review(models.Model):
     def __str__(self):
         return f"{self.title} | written by {self.user}"
 
+# Specifies the default ordering of reviews, with the newest first
     class Meta:
         ordering = ["-created_at"]

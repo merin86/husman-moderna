@@ -1,3 +1,7 @@
+/**
+ * This script handles the deletion of reservations within the web application. 
+ * The script queries all delete buttons identified by the attribute 'data-bs-toggle="modal"'.
+ */
 document.addEventListener("DOMContentLoaded", function() {
     var deleteButtons = document.querySelectorAll('button[data-bs-toggle="modal"]');
     deleteButtons.forEach(function(button) {

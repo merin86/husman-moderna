@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- Main container for edit reviews content -->
 <div class="container mt-5">
     <div class="row">
+
+       <!-- Section for editing a review. Includes a warning that the edited review will require re-approval. -->
         <div class="col-md-6 review-form">
             <h3 class="review-titles">Edit Review</h3>
             <p>If you edit your review, it will need to be approved by Admin again.</p>
             <form method="post">
                 {% csrf_token %}
+                <!-- Form fields for title, content, and rating of the review. -->
                 <div class="mb-3">
                     <label for="id_title" class="form-label">Title*</label>
                     {{ form.title }}
@@ -20,6 +24,7 @@
                     <label for="id_rating" class="form-label">Rating (1-10)*</label>
                     {{ form.rating }}
                 </div>
+                <!-- Action buttons: Update to submit changes and Close to return to the previous page. -->
                 <div class="d-flex justify-content-start">
                     <button type="submit" class="btn btn-custom send-review-button me-2">Update</button>
                     <button type="button" onclick="history.back();" class="btn btn-secondary send-review-button">Close</button>

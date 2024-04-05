@@ -4,16 +4,18 @@
 {% block title %}My Reservations{% endblock %}
 
 {% block content %}
-<!-- My Reservations title -->
+<!-- Hero section with the my reservations title -->
 <div class="hero-container">
     <div class="title position-absolute top-50 start-50 translate-middle text-center">
         <h1>My Reservations</h1>
     </div>
 </div>
 
+<!-- Container for displaying user's reservations as cards -->
 <div class="container mt-5">
     <div class="row">
         {% for reservation in reservations %}
+        <!-- Each reservation card -->
         <div class="col-12 col-md-6 col-lg-4 mb-4">
             <div class="card h-100">
                 <div class="card-body">
@@ -27,7 +29,7 @@
                     {% if reservation.message %}
                     <p class="card-text">Message: {{ reservation.message }}</p>
                     {% endif %}
-                    <!-- Edit and delete links -->
+                    <!-- Edit and delete actions for each reservation -->
                     <a href="{% url 'reservations:edit_reservation' reservation.id %}"
                         class="btn btn-info btn-sm">Edit</a>
                     <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
@@ -37,13 +39,14 @@
             </div>
         </div>
         {% empty %}
+        <!-- Displayed when there are no reservations -->
         <div class="col-12">
             <p>You have no reservations.</p>
         </div>
         {% endfor %}
     </div>
 </div>
-<!-- Delete Confirmation Modal -->
+<!-- Modal for confirming the deletion of a reservation -->
 <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
@@ -67,6 +70,7 @@
 </div>
 {% endblock %}
 
+<!-- Links to the JavaScript file that handles dynamic behavior of delete buttons -->
 {% block extras %}
 <script src="{% static 'js/reservations.js' %}"></script>
 {% endblock %}

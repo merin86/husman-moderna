@@ -1,7 +1,7 @@
 from django.db import models
 
-# Create your models here.
 
+# Dish class represents a menu item in the restaurant
 class Dish(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()

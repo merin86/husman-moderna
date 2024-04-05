@@ -3,17 +3,18 @@
 {% block title %}Book Reservation - {{ block.super }}{% endblock %}
 
 {% block content %}
-<!-- Book Reservation title -->
+<!-- Hero section with the book reservation title -->
 <div class="hero-container">
     <div class="title position-absolute top-50 start-50 translate-middle text-center">
         <h1>Book Reservation</h1>
     </div>
 </div>
 
-<!-- Reservation Form -->
+<!-- Container for the reservation form -->
 <div class="container reservation-container mt-5">
     <div class="row">
         <div class="col-md-12 reservation-form">
+            <!-- Form for booking a reservation -->
             <form method="post">
                 {% csrf_token %}
                 <div class="mb-3">
@@ -48,7 +49,9 @@
                     <label for="id_message" class="form-label">Message (Optional):</label>
                     {{ form.message }}
                 </div>
+                <!-- Submit button for the form -->
                 <button type="submit" class="btn btn-custom send-review-button">Book Now!</button>
+                <!-- Button to close the form if in edit mode, providing a way back to the previous page -->
                 {% if is_editing %}
                 <button type="button" onclick="history.back();" class="btn btn-secondary send-review-button">Close</button>
                 {% endif %}

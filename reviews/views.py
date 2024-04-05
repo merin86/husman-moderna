@@ -8,6 +8,12 @@ from django.contrib import messages
 
 
 def review_list(request):
+    """
+    Display reviews to users. If the user is authenticated,
+    they will see all approved reviews plus their own unapproved reviews.
+    Otherwise, only approved reviews are shown.
+    Pagination is implemented to organize the display of reviews.
+    """
     if request.user.is_authenticated:
         reviews_list = Review.objects.filter(Q(approved=True) | Q(user=request.user)).distinct().order_by('-created_at')
     else:
@@ -22,6 +28,12 @@ def review_list(request):
 
 @login_required
 def review_create(request):
+    """
+    Allow logged-in users to create a new review.
+    Reviews must be approved by an admin before becoming
+    visible to other users. A success message is displayed
+    upon submission.
+    """
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -37,6 +49,12 @@ def review_create(request):
 
 @login_required
 def review_update(request, review_id):
+    """
+    Enable users to update their existing reviews.
+    The updated review requires reapproval from an admin.
+    An informational message is displayed after submission
+    indicating the review is pending approval.
+    """
     review = get_object_or_404(Review, id=review_id, user=request.user)
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
@@ -53,6 +71,11 @@ def review_update(request, review_id):
 
 @login_required
 def review_delete(request, review_id):
+    """
+    Provide a way for users to delete their reviews.
+    A success message confirms the deletion. Users are
+    redirected to the list of reviews afterward.
+    """
     review = get_object_or_404(Review, id=review_id, user=request.user)
     review.delete()
     messages.success(request, "Your review has been successfully deleted.")

@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import Dish
 
-# Create your views here.
 
+# The menu view-function gathers and organizes dishes for menu page
 def menu(request):
     appetizers = Dish.objects.filter(category='Appetizer')
     main_courses = Dish.objects.filter(category='Main Course')

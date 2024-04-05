@@ -2,6 +2,8 @@ from django import forms
 from .models import Review
 from django.core.validators import MinValueValidator, MaxValueValidator
 
+
+# The form for creating and editing a review
 class ReviewForm(forms.ModelForm):
     rating = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'rating-input', 'min': '1', 'max': '10'}))
 
