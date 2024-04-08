@@ -85,3 +85,11 @@ def delete_reservation(request, pk):
         return redirect('reservations:my_reservations')
     else:
         return redirect('reservations:my_reservations')
+
+@login_required
+def large_reservation(request):
+    """
+    Renders the large reservation form and handles the form submission using EmailJS on the client side.
+    This view is intended for booking large parties or events.
+    """
+    return render(request, 'reservations/large_reservation.html')

@@ -211,6 +211,15 @@ h1, h2, h3, h4, h5, h6 {
     resize: none;
 }
 
+/* Styles for large reservation page */
+.reservation-instruction {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    word-wrap: break-word;
+}
+
 /* Styles for review page */
 .review-titles {
     margin-bottom: 2rem;

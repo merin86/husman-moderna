@@ -28,6 +28,7 @@
                 <div class="mb-3">
                     <label for="id_guests" class="form-label">Number of Guests*</label>
                     {{ form.guests }}
+                    <p>If you want to book a table for more than 8 people, <a href="{% url 'reservations:large_reservation' %}">click here</a>!</p>
                 </div>
                 <div class="mb-3">
                     <label for="id_first_name" class="form-label">First Name*</label>
