@@ -144,6 +144,8 @@ Used as cloud storage for images uploaded.
 Framework used to create the web page.
 -   [Bootstrap](https://getbootstrap.com/):
 CSS framework used as a tool to style the web page.
+-   [EmailJS](https://www.emailjs.com/):
+EmailJS is implemented to receive emails when the user wishes to make large reservations. 
 
 ## Agile
 
@@ -214,6 +216,8 @@ CSS Validator
 - This previous PP4 project has been used as a source of inspiration and also as a tool, using DevTools, for various codes (especially in the creation of the menu and footer): [Tasty Bites](https://tasty-bites-rb-427304cf20b7.herokuapp.com/)
 
 - [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/) have been used to get the right classes.
+
+- [EmailJS docs](https://www.emailjs.com/docs/) were used to implement their functionality correctly in the project.
 
 - This page has been used as a tool for creating pseudo-classes: [Meet the Pseudo Class Selectors](https://css-tricks.com/pseudo-class-selectors/)
 

@@ -19,6 +19,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
+
             <!-- Form for booking a large reservation -->
             <form id="large-reservation-form" class="needs-validation" novalidate>
                 <div class="mb-3">
@@ -82,8 +83,10 @@
 {% endblock %}
 
 {% block extras %}
+<!-- Including EmailJS SDK -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
+<!-- Initialization of EmailJS with publicKey -->
 <script type="text/javascript">
     (function () {
         emailjs.init({
@@ -91,6 +94,7 @@
         });
     })();
 </script>
+<!-- JavaScript to handle form submission -->
 <script type="text/javascript">
     window.onload = function () {
         document.getElementById('large-reservation-form').addEventListener('submit', function (event) {
