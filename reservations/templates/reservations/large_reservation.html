@@ -105,6 +105,7 @@
                 emailjs.sendForm('service_e8pf4l4', 'booking_form123', this)
                     .then(() => {
                         alert('SUCCESS!');
+                        window.location.href = '/home';
                     }, (error) => {
                         alert('FAILED...', error);
                     });
