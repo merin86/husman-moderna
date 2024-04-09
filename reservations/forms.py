@@ -32,3 +32,9 @@ class ReservationForm(forms.ModelForm):
         if not last_name:
             raise forms.ValidationError("This field cannot be blank.")
         return last_name
+
+    def clean_phone(self):
+        phone = self.cleaned_data.get('phone')
+        if not phone.isdigit():
+            raise forms.ValidationError("Only numbers are allowed.")
+        return phone
