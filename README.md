@@ -206,7 +206,7 @@ CSS Validator
 
 ### Content
 
-- All content was written by the developer.
+- The text content on the web page has been partly modified by Bengt Liljenroth in order to achieve a neater language.
 
 ### Code
 
