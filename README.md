@@ -162,6 +162,8 @@ This instruction video was used to help create the Kanban Board: [Agile Guide](h
 
 Automated testing has been implemented in the projects workspace. Views and Models have been tested within all affected apps. Forms have also been tested in "reservations" and "reviews". The auto-generated "tests.py" files have been deleted and instead "tests" folders have been added to affected apps. Within the tests folders, the test files have been added with clear names that describe what is being tested. This is to create clarity around the structure of the project. The Home app has no tests, as it was not relevant. Also, within each "tests" folder, an empty file called init.py has been created. This makes it possible for Django's test runner to discover and run tests contained within that directory or its subdirectories.
 
+The automated testing is not comprehensive, but it gives an indication of the developer's ability to create automated tests.
+
 ### Manual Testing
 
 #### Admin
