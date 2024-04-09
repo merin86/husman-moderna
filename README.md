@@ -160,7 +160,7 @@ This instruction video was used to help create the Kanban Board: [Agile Guide](h
 
 ### Automated Testing
 
-Automated testing has been implemented for the apps: About, 
+Automated testing has been implemented in the projects workspace. Views and Models have been tested within all affected apps. Forms have also been tested in "reservations" and "reviews". The auto-generated "tests.py" files have been deleted and instead "tests" folders have been added to affected apps. Within the tests folders, the test files have been added with clear names that describe what is being tested. This is to create clarity around the structure of the project. The Home app has no tests, as it was not relevant. Also, within each "tests" folder, an empty file called init.py has been created. This makes it possible for Django's test runner to discover and run tests contained within that directory or its subdirectories.
 
 ### Manual Testing
 
@@ -229,6 +229,8 @@ CSS Validator
 - This page has been used to create the correct flexbox attributes: [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background)
 
 - The following web page has been used as a learning tool and source of inspiration to create own codes for the website: [W3Schools](https://www.w3schools.com/)
+
+- With the help of [MDN Web Docs](https://developer.mozilla.org/en-US/), the automated tests for the project were created.
 
 - This README.md has been used as a template to create this README: [My Fishing Adventure - README.md](https://github.com/markdaniel1982/MD82-P4/blob/main/README.md#media)
 
