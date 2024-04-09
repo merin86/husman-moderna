@@ -97,12 +97,30 @@
 <!-- JavaScript to handle form submission -->
 <script type="text/javascript">
     window.onload = function () {
-        document.getElementById('large-reservation-form').addEventListener('submit', function (event) {
+        const form = document.getElementById('large-reservation-form');
+        form.addEventListener('submit', function (event) {
             event.preventDefault();
             
-            // Check if the form is valid
-            if (this.checkValidity()) {
-                emailjs.sendForm('service_e8pf4l4', 'booking_form123', this)
+            // Trim whitespace from beginning and end of the input fields
+            const name = form.elements['name'].value.trim();
+            const email = form.elements['email'].value.trim();
+            const phone = form.elements['phone'].value.trim();
+            
+            // Check if the name or email or phone is only whitespace (or empty after trimming)
+            if (!name || !email || !phone) {
+                alert('Name, email, and phone number are required.');
+                return;
+            }
+            
+            // Check if the phone number is valid (only digits)
+            if (!/^\d+$/.test(phone)) {
+                alert('Phone number must contain only digits.');
+                return;
+            }
+
+            // If form is valid, proceed with EmailJS submission
+            if (form.checkValidity()) {
+                emailjs.sendForm('service_e8pf4l4', 'booking_form123', form)
                     .then(() => {
                         alert('SUCCESS!');
                         window.location.href = '/home';
@@ -110,7 +128,8 @@
                         alert('FAILED...', error);
                     });
             } else {
-                this.classList.add('was-validated');
+                // Highlight validation errors
+                form.classList.add('was-validated');
             }
         });
     }
