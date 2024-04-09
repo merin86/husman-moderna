@@ -31,6 +31,7 @@ Introduction text.
     - [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
 * [Agile](#agile)
 * [Testing](#testing)
+    - [Automated Testing](#automated-testing)
     - [Manual Testing](#manual-testing)
     - [Bugs](#bugs)
     - [Lighthouse](#lighthouse)
@@ -156,6 +157,10 @@ The project was developed following Agile principles, with the Project Board and
 This instruction video was used to help create the Kanban Board: [Agile Guide](https://www.youtube.com/watch?v=U_dMihBgUNY)
 
 ## Testing
+
+### Automated Testing
+
+Automated testing has been implemented for the apps: About, 
 
 ### Manual Testing
 
