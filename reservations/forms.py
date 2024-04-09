@@ -33,6 +33,7 @@ class ReservationForm(forms.ModelForm):
             raise forms.ValidationError("This field cannot be blank.")
         return last_name
 
+    # Clears and validates the input for the 'phone' field.
     def clean_phone(self):
         phone = self.cleaned_data.get('phone')
         if not phone.isdigit():

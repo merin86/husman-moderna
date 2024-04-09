@@ -5,7 +5,7 @@
 <div class="container mt-5">
     <div class="row">
 
-       <!-- Section for editing a review. Includes a warning that the edited review will require re-approval. -->
+        <!-- Section for editing a review. Includes a warning that the edited review will require re-approval. -->
         <div class="col-md-6 review-form">
             <h3 class="review-titles">Edit Review</h3>
             <p>If you edit your review, it will need to be approved by Admin again.</p>
@@ -15,10 +15,20 @@
                 <div class="mb-3">
                     <label for="id_title" class="form-label">Title*</label>
                     {{ form.title }}
+                    {% if form.title.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form.title.errors.as_text }}
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="mb-3">
                     <label for="id_content" class="form-label">Content*</label>
                     {{ form.content }}
+                    {% if form.content.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form.content.errors.as_text }}
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="mb-3">
                     <label for="id_rating" class="form-label">Rating (1-10)*</label>
@@ -27,7 +37,8 @@
                 <!-- Action buttons: Update to submit changes and Close to return to the previous page. -->
                 <div class="d-flex justify-content-start">
                     <button type="submit" class="btn btn-custom send-review-button me-2">Update</button>
-                    <button type="button" onclick="history.back();" class="btn btn-secondary send-review-button">Close</button>
+                    <button type="button" onclick="history.back();"
+                        class="btn btn-secondary send-review-button">Close</button>
                 </div>
             </form>
         </div>

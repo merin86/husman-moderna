@@ -42,6 +42,8 @@ def review_create(request):
             review.save()
             messages.success(request, "Your review has been submitted and is awaiting approval.")
             return redirect('reviews:review_list')
+        else:
+            return render(request, 'reviews/reviews.html', {'form': form})
     else:
         form = ReviewForm()
     return redirect('reviews:review_list')
@@ -64,6 +66,8 @@ def review_update(request, review_id):
             review.save()
             messages.info(request, "Your review has been updated and is awaiting reapproval.")
             return redirect('reviews:review_list')
+        else:
+            return render(request, 'reviews/review_edit.html', {'form': form, 'review': review})
     else:
         form = ReviewForm(instance=review)
     return render(request, 'reviews/review_edit.html', {'form': form})
