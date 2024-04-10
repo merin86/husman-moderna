@@ -2,7 +2,9 @@
 
 [The actual website](https://husman-moderna-b3b264b75487.herokuapp.com/home/)
 
-Introduction text.
+Husman Moderna is a full-stack website created for a fictitious restaurant where the user can read the menu, book a table, leave reviews, etc. As a user, you first create an account to gain access to all functions on the website, but even non-registered visitors have access to the menu, can learn about the restaurant and read reviews from the community.
+
+This website not only aims to simplify the reservation process but also fosters a vibrant community of food enthusiasts eager to explore and discuss the culinary delights Husman Moderna has to offer.
 
 ![Mockup](static/documentation/)
 
