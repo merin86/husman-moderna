@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils.timezone import localtime, now
 from .forms import ReservationForm
 from .models import Reservation
 from django.contrib.auth.decorators import login_required
@@ -36,9 +37,11 @@ def book_reservation(request):
 @login_required
 def my_reservations(request):
     """
-    Displays a list of reservations made by the logged-in user.
+    Displays a list of upcoming reservations made by the logged-in user.
+    Past reservations are not shown.
     """
-    reservations = Reservation.objects.filter(user=request.user)
+    current_date = localtime(now()).date()
+    reservations = Reservation.objects.filter(user=request.user, date__gte=current_date).order_by('date', 'time')
     return render(request, 'reservations/my_reservations.html', {'reservations': reservations})
 
 
