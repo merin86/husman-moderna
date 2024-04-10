@@ -1,6 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from .models import Reservation
+from datetime import date
 
 # This form class is used to create and edit reservations through the web interface
 class ReservationForm(forms.ModelForm):
@@ -39,3 +40,12 @@ class ReservationForm(forms.ModelForm):
         if not phone.isdigit():
             raise forms.ValidationError("Only numbers are allowed.")
         return phone
+
+    # Custom validation for the 'date' field to ensure that reservations cannot be made for the past or for today.
+    def clean_date(self):
+        reservation_date = self.cleaned_data['date']
+        if reservation_date < date.today():
+            raise ValidationError("Reservation date cannot be in the past.")
+        elif reservation_date == date.today():
+            raise ValidationError("Reservations can only be made for tomorrow or later.")
+        return reservation_date

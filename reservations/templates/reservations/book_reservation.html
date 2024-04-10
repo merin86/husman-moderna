@@ -20,6 +20,11 @@
                 <div class="mb-3">
                     <label for="id_date" class="form-label">Date*</label>
                     {{ form.date }}
+                    {% if form.date.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ form.date.errors.as_text }}
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="mb-3">
                     <label for="id_time" class="form-label">Time*</label>
