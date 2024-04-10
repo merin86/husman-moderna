@@ -49,6 +49,11 @@ body {
     font-weight: 700;
 }
 
+/* Styles for active link in navbar */
+.nav-link.active {
+    text-shadow: 1px 1px 2px #6c757d !important;
+}
+
 /* Main Content Styling */
 main {
     flex: 1 0 auto;
