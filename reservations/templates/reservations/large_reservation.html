@@ -11,7 +11,8 @@
 </div>
 
 <!-- Reservation instruction -->
-<h4 class="reservation-instruction">Please fill in the fields below and press the Send button. We will get back to you as soon as we can
+<h4 class="reservation-instruction">Please fill in the fields below and press the Send button. We will get back to you
+    as soon as we can
     within
     24 hours.</h4>
 
@@ -24,21 +25,15 @@
             <form id="large-reservation-form" class="needs-validation" novalidate>
                 <div class="mb-3">
                     <input type="text" class="form-control" name="name" placeholder="Your Name*" required>
-                    <div class="invalid-feedback">
-                        Please enter your name.
-                    </div>
+                    <div class="alert alert-danger d-none" id="nameAlert">Name is required.</div>
                 </div>
                 <div class="mb-3">
                     <input type="email" class="form-control" name="email" placeholder="Your Email*" required>
-                    <div class="invalid-feedback">
-                        Please enter a valid email address.
-                    </div>
+                    <div class="alert alert-danger d-none" id="emailAlert">A valid email is required.</div>
                 </div>
                 <div class="mb-3">
                     <input type="text" class="form-control" name="phone" placeholder="Your Phone Number*" required>
-                    <div class="invalid-feedback">
-                        Please enter your phone number.
-                    </div>
+                    <div class="alert alert-danger d-none" id="phoneAlert">A valid phone number is required.</div>
                 </div>
                 <div class="mb-3">
                     <input type="date" class="form-control" name="date" required>
@@ -79,6 +74,31 @@
         </div>
     </div>
 </div>
+<!-- Success Toast -->
+<div class="toast-container position-fixed top-50 start-50 translate-middle">
+    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+        <div class="toast-header">
+            <strong class="me-auto">Success</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Your reservation has been successfully submitted!
+        </div>
+    </div>
+
+    <!-- Failed Toast -->
+    <div id="failedToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+        <div class="toast-header">
+            <strong class="me-auto">Failed</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            There was a problem with your reservation. Please try again.
+        </div>
+    </div>
+</div>
+
+
 
 {% endblock %}
 
@@ -100,32 +120,48 @@
         const form = document.getElementById('large-reservation-form');
         form.addEventListener('submit', function (event) {
             event.preventDefault();
-            
+
+            // Initial hide alerts
+            document.getElementById('nameAlert').classList.add('d-none');
+            document.getElementById('emailAlert').classList.add('d-none');
+            document.getElementById('phoneAlert').classList.add('d-none');
+
             // Trim whitespace from beginning and end of the input fields
             const name = form.elements['name'].value.trim();
             const email = form.elements['email'].value.trim();
             const phone = form.elements['phone'].value.trim();
-            
-            // Check if the name or email or phone is only whitespace (or empty after trimming)
-            if (!name || !email || !phone) {
-                alert('Name, email, and phone number are required.');
-                return;
+
+            let valid = true;
+
+            // Validate each field and display alert if necessary
+            if (!name) {
+                document.getElementById('nameAlert').classList.remove('d-none');
+                valid = false;
             }
-            
-            // Check if the phone number is valid (only digits)
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('emailAlert').classList.remove('d-none');
+                valid = false;
+            }
             if (!/^\d+$/.test(phone)) {
-                alert('Phone number must contain only digits.');
-                return;
+                document.getElementById('phoneAlert').classList.remove('d-none');
+                valid = false;
             }
 
-            // If form is valid, proceed with EmailJS submission
-            if (form.checkValidity()) {
-                emailjs.sendForm('service_e8pf4l4', 'booking_form123', form)
+            // If all validations pass, submit the form with EmailJS
+            if (valid && form.checkValidity()) {
+                emailjs.sendForm('service_e8pf4l4', 'booking_form123', this)
                     .then(() => {
-                        alert('SUCCESS!');
-                        window.location.href = '/home';
+                        var toastEl = document.getElementById('successToast');
+                        var toast = new bootstrap.Toast(toastEl);
+                        toast.show();
+                        setTimeout(function () {
+                            window.location.href = '/home';
+                        }, 5000);
                     }, (error) => {
-                        alert('FAILED...', error);
+                        var toastEl = document.getElementById('failedToast');
+                        var toast = new bootstrap.Toast(toastEl);
+                        toast.show();
+                        console.error('FAILED...', error);
                     });
             } else {
                 // Highlight validation errors
