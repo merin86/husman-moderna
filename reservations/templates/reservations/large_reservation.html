@@ -40,6 +40,8 @@
                     <div class="invalid-feedback">
                         Please choose a date.
                     </div>
+                    <div class="alert alert-danger d-none" id="dateAlert">Reservations can only be made for tomorrow or
+                        later.</div>
                 </div>
                 <div class="mb-3">
                     <select class="form-control" name="time" required>
@@ -125,13 +127,28 @@
             document.getElementById('nameAlert').classList.add('d-none');
             document.getElementById('emailAlert').classList.add('d-none');
             document.getElementById('phoneAlert').classList.add('d-none');
+            document.getElementById('dateAlert').classList.add('d-none');
 
             // Trim whitespace from beginning and end of the input fields
             const name = form.elements['name'].value.trim();
             const email = form.elements['email'].value.trim();
             const phone = form.elements['phone'].value.trim();
+            const dateInput = form.elements['date'].value;
 
             let valid = true;
+
+            // Check if the date is today or in the past
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const minimumDate = tomorrow.toISOString().split('T')[
+                0];
+
+            if (dateInput < minimumDate) {
+                document.getElementById('dateAlert').classList.remove(
+                    'd-none');
+                valid = false;
+            }
 
             // Validate each field and display alert if necessary
             if (!name) {
@@ -164,7 +181,6 @@
                         console.error('FAILED...', error);
                     });
             } else {
-                // Highlight validation errors
                 form.classList.add('was-validated');
             }
         });
