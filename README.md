@@ -54,23 +54,28 @@ This website not only aims to simplify the reservation process but also fosters 
 
 ### Target Audience
 
-Text
+Users who want to book a table at a restaurant that serves Swedish home cooking.
 
 ### User Stories
 
 #### A. First Time Visitor Goals
 
-        1. As a first time visitor,
-        2. As a first-time visitor,
-        3. As a first-time visitor,
+        1. As a first time visitor, I want to easily        understand the main purpose of the website so that I can learn what the site offers without unnecessary navigation.
+
+        2. As a first-time visitor, I want to be able to effortlessly navigate the menu to quickly decide what interests me.
+
+        3. As a first-time visitor, I want to see reviews from other customers to estimate the quality of the restaurant.
 
 #### B. Returning Visitor Goals
-        1. As a Returning Visitor,
-        2. As a Returning Visitor,
+
+        1. As a Returning Visitor, I want to quickly make a reservation without having to re-enter my details every time, using an account-based system for convenience.
+
+        2. As a Returning Visitor, I want to leave reviews and share my experiences at the restaurant.
 
 #### C. Frequent User Goals
-        1. As a Frequent User,
+        1. As a Frequent User, I want to manage my reservations and possibly modify upcoming reservations without hassle.
 
+        2. As a Frequent User, I want to be able to update or delete my old reviews easily.
 
 ## Features
 
@@ -127,6 +132,13 @@ Wireframes, used as starting points for the design of the website, were created 
 
 ### Database Plan
 
+Entity Relationship Diagram for the reservation model:
+
+![Entity Relationship Diagram](static/documentation/erd-reservation.jpg)
+
+Entity Relationship Diagram for the review model:
+
+![Entity Relationship Diagram](static/documentation/erd-reviews.jpg)
 
 ## Technologies Used
 
