@@ -113,9 +113,15 @@ The website uses font-family: 'Playfair Display' for its headings and font-famil
 
 ### Wireframes
 
-Wireframes used as starting points for the design of the website.
+Wireframes, used as starting points for the design of the website, were created with Microsoft Paint:
 
-![Wireframe](static/documentation/)
+* Desktop Wireframe
+
+![Wireframe](static/documentation/wireframe-desktop.jpg)
+
+* Mobile Wireframe
+
+![Wireframe](static/documentation/wireframe-mobile.jpg)
 
 ### Flow Diagram
 
