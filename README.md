@@ -204,9 +204,21 @@ The automated testing is not comprehensive, but it gives an indication of the de
 
 #### Admin
 
+![Admin Manual Testing](static/documentation/admin-manual-testing.jpg)
+
 #### User
 
+![User Manual Testing](static/documentation/user-manual-testing.jpg)
+
+- After testing in dev tools, it is confirmed that the website is responsive across different screen sizes.
+
 ### Bugs
+
+- At times, during construction, styles could not be alternated because Bootstrap did override custom CSS styles. In these cases, an "!important" marker was added to this style, to ensure that the style was implemented.
+
+- My mentor pointed out that the forms accepted spaces. This was resolved with new functions within the forms.py files that generate error messages when entering spaces.
+
+- Reservations accepted bookings on dates that have passed. This was solved with equivalent functions as mentioned above.
 
 ### Lighthouse
 
@@ -241,6 +253,8 @@ CSS Validator
 ## Credits
 
 ### Content
+
+- The content of the web page is created by the developer.
 
 - The text content on the web page has been partly modified by Bengt Liljenroth in order to achieve a neater language.
 
