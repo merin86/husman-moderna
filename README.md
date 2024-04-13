@@ -222,9 +222,61 @@ The automated testing is not comprehensive, but it gives an indication of the de
 
 ### Lighthouse
 
-Accessibility has reached
+#### Mobile
 
-![Lighthouse page 1](static/documentation/)
+- Home page:
+
+Performance is somewhat low because the images are large (approx. 500 kb). The images are taken from Pexels and then compressed with TinyPNG, but the images are still quite large.
+
+![Lighthouse mobile home](static/documentation/lighthouse-mobile-front.jpg)
+
+- About page:
+
+Performance is somewhat low here as well, due to large images.
+
+![Lighthouse mobile about](static/documentation/lighthouse-mobile-about.jpg)
+
+- Menu page:
+
+Hero image is a large file, which affects performance.
+
+![Lighthouse mobile menu](static/documentation/lighthouse-mobile-menu.jpg)
+
+- Reservation page:
+
+Hero image is a large file, which affects performance.
+
+![Lighthouse mobile reservation](static/documentation/lighthouse-mobile-reservation.jpg)
+
+- Review page:
+
+![Lighthouse mobile review](static/documentation/lighthouse-mobile-review.jpg)
+
+#### Desktop
+
+- Home page:
+
+Performance works better here on desktop than on mobile.
+
+![Lighthouse desktop home](static/documentation/lighthouse-desktop-front.jpg)
+
+- About page:
+
+Performance is somewhat low here as well, due to large images.
+
+![Lighthouse desktop about](static/documentation/lighthouse-desktop-about.jpg)
+
+- Menu page:
+
+![Lighthouse desktop menu](static/documentation/lighthouse-desktop-menu.jpg)
+
+- Reservation page:
+
+![Lighthouse desktop reservation](static/documentation/lighthouse-desktop-reservation.jpg)
+
+- Review page:
+
+![Lighthouse desktop review](static/documentation/lighthouse-desktop-review.jpg)
 
 ### Validator Testing
 
