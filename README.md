@@ -20,7 +20,6 @@ This website not only aims to simplify the reservation process but also fosters 
     - [Leave Review](#leave-review)
     - [About Page](#about-page)
     - [Future Features](#future-features)
-    - [Features Not Included](#features-not-included)
 * [Design](#design)
     - [Colour Scheme](#about-page)
     - [Typography](#typography)
@@ -60,7 +59,7 @@ Users who want to book a table at a restaurant that serves Swedish home cooking.
 
 #### A. First Time Visitor Goals
 
-        1. As a first time visitor, I want to easily        understand the main purpose of the website so that I can learn what the site offers without unnecessary navigation.
+        1. As a first time visitor, I want to easily understand the main purpose of the website so that I can learn what the site offers without unnecessary navigation.
 
         2. As a first-time visitor, I want to be able to effortlessly navigate the menu to quickly decide what interests me.
 
@@ -93,18 +92,23 @@ Users who want to book a table at a restaurant that serves Swedish home cooking.
 
 * Creating logic that ensures that double bookings do not take place at the restaurant, i.e. that there is a block if the restaurant is fully booked during a specific day/time.
 
-### Features Not Included
-
 
 ## Design
 
 ### Colour Scheme
 
-- This website was used to ensure the same color shades were used throughout the website: [Color Picker](https://imagecolorpicker.com/)
+- [Color Picker](https://imagecolorpicker.com/) was used to ensure the same color shades were used throughout the website.
+
+- The web page colour theme includes two specific colours as follows. The colours reflect the restaurant's food theme, Swedish home cooking. Beyond these colours, the page is relatively stripped down, colour-wise:
+
+![Yellow](static/documentation/yellow.jpg)RGBA (255,204,0,255)
+![Blue](static/documentation/blue.jpg)RGBA (57,96,127,255)
+
+- Colour shades and shadows have been used for action buttons, which simplifies navigation.
 
 ### Typography
 
-The website uses font-family: 'Playfair Display' for its headings and font-family: 'Lato' for body text.
+The website uses font-family: 'Playfair Display' for its headings, to create a sense of elegance, and font-family: 'Lato' for body text.
 
 -   The fonts used were imported from [Google Fonts](https://fonts.google.com/)
 
@@ -112,7 +116,7 @@ The website uses font-family: 'Playfair Display' for its headings and font-famil
 
 - This page was used to create a favicon for the webpage: [Favicon](https://favicon.io/)
 
-- ChatGPT was used to create the logo for the webpage: [ChatGPT](https://chat.openai.com/)
+- [ChatGPT](https://chat.openai.com/) was used to create the logo for the webpage
 
 - The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
@@ -120,23 +124,35 @@ The website uses font-family: 'Playfair Display' for its headings and font-famil
 
 Wireframes, used as starting points for the design of the website, were created with Microsoft Paint:
 
-* Desktop Wireframe
+- Desktop Wireframe
 
 ![Wireframe](static/documentation/wireframe-desktop.jpg)
 
-* Mobile Wireframe
+- Mobile Wireframe
 
 ![Wireframe](static/documentation/wireframe-mobile.jpg)
 
 ### Flow Diagram
 
+Flow diagrams was created using [Lucidchart](https://lucidchart.com/)
+
+- Flow chart for admin:
+
+![Admin Diagram](static/documentation/admin-flow.jpg)
+
+- Flow chart for user:
+
+![User Diagram](static/documentation/user-flow.jpg)
+
 ### Database Plan
 
-Entity Relationship Diagram for the reservation model:
+Entity Relationship Diagram (ERD) was created using OpenOffice
+
+- ERD for the reservation model:
 
 ![Entity Relationship Diagram](static/documentation/erd-reservation.jpg)
 
-Entity Relationship Diagram for the review model:
+- ERD for the review model:
 
 ![Entity Relationship Diagram](static/documentation/erd-reviews.jpg)
 
