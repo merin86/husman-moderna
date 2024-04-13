@@ -356,4 +356,9 @@ I would like to thank my mentor, Jubril Akolade, for all the help he has given m
 
 For help with manual testing:
 
+- Annika Magnusson
+- Anthony Oweleke
 - Björn Johansson
+- Cecilia Magnusson
+- Klas Magnusson
+- Saba Abbasi
