@@ -5,13 +5,15 @@ from django.contrib.messages import get_messages
 from reservations.models import Reservation
 from datetime import date, time
 
+
 class ReservationViewsTest(TestCase):
     def setUp(self):
-        # Create a user for the tests
-        self.user = User.objects.create_user(username='testuser', password='12345')
+        # Set up user for tests
+        self.user = User.objects.create_user(
+            username='testuser', password='12345')
         self.client.login(username='testuser', password='12345')
 
-        # Create a reservation instance for testing
+        # Create reservation instance for testing
         self.reservation = Reservation.objects.create(
             user=self.user,
             date=date.today(),
@@ -25,36 +27,51 @@ class ReservationViewsTest(TestCase):
         )
 
     def test_book_reservation_view(self):
-        # Test access to the book reservation view
-        response = self.client.get(reverse('reservations:book_reservation'))
+        # Test access to book reservation view
+        response = self.client.get(
+            reverse('reservations:book_reservation'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'reservations/book_reservation.html')
+        self.assertTemplateUsed(
+            response, 'reservations/book_reservation.html')
 
     def test_my_reservations_view(self):
-        # Test access to the my reservations view
-        response = self.client.get(reverse('reservations:my_reservations'))
+        # Test access to my reservations view
+        response = self.client.get(
+            reverse('reservations:my_reservations'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'reservations/my_reservations.html')
+        self.assertTemplateUsed(
+            response, 'reservations/my_reservations.html')
         self.assertIn('reservations', response.context)
 
     def test_edit_reservation_view(self):
-        # Test access to the edit reservation view
-        response = self.client.get(reverse('reservations:edit_reservation', kwargs={'reservation_id': self.reservation.pk}))
+        # Test access to edit reservation view
+        response = self.client.get(
+            reverse('reservations:edit_reservation',
+                    kwargs={'reservation_id': self.reservation.pk}))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'reservations/book_reservation.html')
+        self.assertTemplateUsed(
+            response, 'reservations/book_reservation.html')
 
     def test_delete_reservation_view(self):
-        # Test the delete reservation view
-        response = self.client.post(reverse('reservations:delete_reservation', kwargs={'pk': self.reservation.pk}))
-        self.assertRedirects(response, reverse('reservations:my_reservations'))
-        self.assertFalse(Reservation.objects.filter(pk=self.reservation.pk).exists())
+        # Test delete reservation view
+        response = self.client.post(
+            reverse('reservations:delete_reservation',
+                    kwargs={'pk': self.reservation.pk}))
+        self.assertRedirects(
+            response, reverse('reservations:my_reservations'))
+        self.assertFalse(
+            Reservation.objects.filter(pk=self.reservation.pk).exists())
 
-        # Test that a success message is added
+        # Check success message
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), "The reservation has been successfully deleted.")
+        self.assertEqual(
+            str(messages[0]),
+            "The reservation has been successfully deleted.")
 
     def test_large_reservation_view(self):
-        # Test access to the large reservation view
-        response = self.client.get(reverse('reservations:large_reservation'))
+        # Test access to large reservation view
+        response = self.client.get(
+            reverse('reservations:large_reservation'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'reservations/large_reservation.html')
+        self.assertTemplateUsed(
+            response, 'reservations/large_reservation.html')

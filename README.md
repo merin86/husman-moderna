@@ -35,9 +35,11 @@ This website not only aims to simplify the reservation process but also fosters 
     - [Automated Testing](#automated-testing)
     - [Manual Testing](#manual-testing)
     - [Bugs](#bugs)
+    - [Unfixed Bugs](#unfixed-bugs)
     - [Lighthouse](#lighthouse)
     - [Validator Testing](#validator-testing)
     - [Python Testing](#python-testing)
+    - [JavaScript Testing](#javascript-testing)
 * [Deployment](#deployment)
     - [GitHub Deployment](#github-deployment)
     - [Forking](#forking)
@@ -218,6 +220,10 @@ The automated testing is not comprehensive, but it gives an indication of the de
 
 - Reservations accepted bookings on dates that have passed. This was solved with equivalent functions as mentioned above.
 
+### Unfixed Bugs
+
+- A span element with the class: "helptext" seems to have disappeared or is hidden somewhere within the workspace. More information on this under [Validator Testing](#validator-testing).
+
 ### Lighthouse
 
 #### Mobile
@@ -278,15 +284,50 @@ Performance is somewhat low here as well, due to large images.
 
 ### Validator Testing
 
-HTML Validator
+#### HTML
 
-![HTML results index](static/documentation/)
+HTML validation was completed using [W3 Validator](https://validator.w3.org/)
 
-CSS Validator
+- When the signup page was run through W3 Validator, these error messages appeared. However, the file that should contain this span does not seem to be visible anymore in my workspace. It should be under some folder generated when Django AllAuth was installed (specifically within the login or signup file). I have not been able to resolve this issue and have therefore added it under [unfixed bugs](#unfixed-bugs).
 
-![CSS Validator](static/documentation/)
+![HTML Sign Up](static/documentation/validating-signup.jpg)
+
+- All other pages pass the validation without any issues
+
+#### CSS
+
+CSS validation was completed using [W3 Validator](https://jigsaw.w3.org/css-validator/)
+
+![CSS Validator](static/documentation/validating-css.jpg)
 
 ### Python Testing
+
+To test that the Python code meets the PEP8 standard, [CI Python Linter](https://pep8ci.herokuapp.com/) was used.
+
+Python files tested:
+
+- admin
+- models
+- urls
+- views
+- forms
+- tests
+
+Only small errors were detected, such as too few blank lines, line too long and no newline at end of file. All these have now been rectified.
+
+
+### JavaScript Testing
+
+To test the JavaScript code [JSHint](https://jshint.com/) was used.
+
+JavaScript files tested:
+
+- auto_dismiss_messages.js
+- reservations.js
+- reviews.js
+- JavaScript within my_reservations.html
+
+The code does not generate any warnings.
 
 
 ## Deployment

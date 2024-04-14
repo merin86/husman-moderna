@@ -3,15 +3,17 @@ from django.contrib.auth.models import User
 from reservations.models import Reservation
 from datetime import date, time
 
-# Defines a test case for the Reservation model to ensure its behavior
+
+# Defines a test case for the Reservation model
 class ReservationModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        # This method sets up a user and a reservation instance used across different tests
-        test_user = User.objects.create_user(username='testuser', password='12345')
+        # Set up user and reservation instance for tests
+        test_user = User.objects.create_user(username='testuser',
+                                             password='12345')
         test_user.save()
 
-        # Create a reservation instance for testing
+        # Create a reservation instance for testing purposes
         Reservation.objects.create(
             user=test_user,
             date=date.today(),
@@ -25,13 +27,16 @@ class ReservationModelTest(TestCase):
         )
 
     def test_reservation_string_representation(self):
-        # Tests that the string representation of a Reservation instance is as expected
+        # Test the string representation of a Reservation instance
         reservation = Reservation.objects.get(id=1)
-        expected_reservation_str = f"Reservation for {reservation.first_name} {reservation.last_name} on {reservation.date}"
-        self.assertEqual(str(reservation), expected_reservation_str)
+        expected_str = (
+            f"Reservation for {reservation.first_name} "
+            f"{reservation.last_name} on {reservation.date}"
+        )
+        self.assertEqual(str(reservation), expected_str)
 
     def test_reservation_fields(self):
-        # Verifies that each field in a Reservation instance contains the correct data
+        # Verify correct data in each field of a Reservation instance
         reservation = Reservation.objects.get(id=1)
         self.assertEqual(reservation.guests, 4)
         self.assertEqual(reservation.first_name, 'Martin')

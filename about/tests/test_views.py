@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from about.models import AboutPage
 
+
 class AboutViewTests(TestCase):
 
     def setUp(self):
@@ -19,7 +20,10 @@ class AboutViewTests(TestCase):
         self.assertTemplateUsed(response, 'about/about.html')
 
     def test_about_view_context(self):
-        # Test that the about view passes the AboutPage instance to the template's context
+        """
+        Test that the about view passes the AboutPage
+        instance to the template's context
+        """
         response = self.client.get(reverse('about'))
         self.assertTrue('about_page' in response.context)
         about_page = response.context['about_page']

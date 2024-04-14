@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.test import TestCase
 from menu.models import Dish
 
+
 class DishModelTest(TestCase):
     def setUp(self):
         # Creates an instance of Dish to use in the tests

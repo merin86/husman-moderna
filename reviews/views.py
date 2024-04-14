@@ -15,15 +15,22 @@ def review_list(request):
     Pagination is implemented to organize the display of reviews.
     """
     if request.user.is_authenticated:
-        reviews_list = Review.objects.filter(Q(approved=True) | Q(user=request.user)).distinct().order_by('-created_at')
+        reviews_list = Review.objects.filter(
+            Q(approved=True) | Q(user=request.user)
+        ).distinct().order_by('-created_at')
     else:
-        reviews_list = Review.objects.filter(approved=True).order_by('-created_at')
+        reviews_list = Review.objects.filter(approved=True) \
+                             .order_by('-created_at')
 
     paginator = Paginator(reviews_list, 3)
     page_number = request.GET.get('page')
     reviews = paginator.get_page(page_number)
     form = ReviewForm()
-    return render(request, 'reviews/reviews.html', {'reviews': reviews, 'form': form})
+    return render(
+        request,
+        'reviews/reviews.html',
+        {'reviews': reviews, 'form': form}
+    )
 
 
 @login_required
@@ -40,7 +47,10 @@ def review_create(request):
             review = form.save(commit=False)
             review.user = request.user
             review.save()
-            messages.success(request, "Your review has been submitted and is awaiting approval.")
+            messages.success(
+                request,
+                "Your review has been submitted and is awaiting approval."
+            )
             return redirect('reviews:review_list')
         else:
             return render(request, 'reviews/reviews.html', {'form': form})
@@ -64,10 +74,17 @@ def review_update(request, review_id):
             review = form.save(commit=False)
             review.approved = False
             review.save()
-            messages.info(request, "Your review has been updated and is awaiting reapproval.")
+            messages.info(
+                request,
+                "Your review has been updated and is awaiting reapproval."
+            )
             return redirect('reviews:review_list')
         else:
-            return render(request, 'reviews/review_edit.html', {'form': form, 'review': review})
+            return render(
+                request,
+                'reviews/review_edit.html',
+                {'form': form, 'review': review}
+            )
     else:
         form = ReviewForm(instance=review)
     return render(request, 'reviews/review_edit.html', {'form': form})
