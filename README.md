@@ -334,12 +334,44 @@ The code does not generate any warnings.
 
 ### GitHub Deployment
 
+The website's codebase is managed through GitHub, which serves as both a storage solution and a version control system. This ensures all changes to the code are tracked and reversible. The process is as follows:
+
+1. Open the Terminal in Your IDE: For this project, Gitpod is used.
+2. Stage Changes: Add all modified files to the staging area to prepare them for a commit. This can be done using the command: git add .
+3. Commit Changes: Save the staged changes to the local repository with a descriptive message that summarizes what was modified. Use the command: git commit -m "Enter a meaningful commit message here"
+4. Push Changes: Upload the local branch commits to the GitHub repository to make the changes accessible to others. This is done with: git push
+
+Once these steps are completed, the files are updated and available for review within the GitHub repository.
+
 ### Forking
+
+???
 
 ### Cloning
 
+???
+
 ### Heroku Deployment
 
+1. Create a New Application:
+    - Navigate to the Heroku Dashboard.
+    - Click New, then select Create New App from the drop-down menu.
+    - On the setup page, enter your App name and choose a Region. Then click Create app.
+2. Configure Environment Variables:
+    - Go to the Settings tab.
+    - Click Reveal Config Vars and add the necessary credentials.
+3. Add Buildpacks:
+    - Select python and nodejs buildpacks in that order.
+4. Deploy the Application:
+    - Switch to the Deploy tab and select GitHub - Connect to GitHub.
+    - Enter your repository name and click Search.
+    - Choose the correct repository from the results and click Connect.
+    - Decide between Manual Deployment and Automatic Deployment.
+5. Launch the Application:
+    - After choosing the deployment method, wait for the app to build.
+    - Once the build is complete, click the Open app button to launch your application.
+
+This process ensures your application is set up and deployed on Heroku, with changes easily manageable via GitHub integration.
 
 ## Credits
 
