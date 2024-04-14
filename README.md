@@ -90,7 +90,7 @@ Users who want to book a table at a restaurant that serves Swedish home cooking.
 
 ### Future Features
 
-* Creating logic that ensures that double bookings do not take place at the restaurant, i.e. that there is a block if the restaurant is fully booked during a specific day/time.
+- Creating logic that ensures that double bookings do not take place at the restaurant, i.e. that there is a block if the restaurant is fully booked during a specific day/time.
 
 
 ## Design
