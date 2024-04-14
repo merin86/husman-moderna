@@ -1,19 +1,22 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from reservations.models import Reservation
 from datetime import date, time
+from reservations.models import Reservation
 
 
-# Defines a test case for the Reservation model
 class ReservationModelTest(TestCase):
+    """
+    Defines a test case for the Reservation model
+    """
     @classmethod
     def setUpTestData(cls):
-        # Set up user and reservation instance for tests
+        """
+        Set up user and reservation instance for tests
+        """
         test_user = User.objects.create_user(username='testuser',
                                              password='12345')
         test_user.save()
 
-        # Create a reservation instance for testing purposes
         Reservation.objects.create(
             user=test_user,
             date=date.today(),
@@ -27,7 +30,9 @@ class ReservationModelTest(TestCase):
         )
 
     def test_reservation_string_representation(self):
-        # Test the string representation of a Reservation instance
+        """
+        Test the string representation of a Reservation instance
+        """
         reservation = Reservation.objects.get(id=1)
         expected_str = (
             f"Reservation for {reservation.first_name} "
@@ -36,7 +41,9 @@ class ReservationModelTest(TestCase):
         self.assertEqual(str(reservation), expected_str)
 
     def test_reservation_fields(self):
-        # Verify correct data in each field of a Reservation instance
+        """
+        Verify correct data in each field of a Reservation instance
+        """
         reservation = Reservation.objects.get(id=1)
         self.assertEqual(reservation.guests, 4)
         self.assertEqual(reservation.first_name, 'Martin')

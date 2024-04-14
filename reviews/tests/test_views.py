@@ -1,14 +1,16 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
-from reviews.models import Review
 from datetime import datetime
+from reviews.models import Review
 
 
 class ReviewListViewTests(TestCase):
     @classmethod
     def setUpTestData(cls):
-        # Create a user and reviews for testing
+        """
+        Create a user and reviews for testing
+        """
         test_user = User.objects.create_user(
             username='testuser', password='12345')
         test_user2 = User.objects.create_user(

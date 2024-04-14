@@ -3,8 +3,12 @@ from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
-# The Review model to store user reviews
 class Review(models.Model):
+    """
+    The Review model to store user reviews. This model links to
+    the :model:`auth.User` to associate reviews with specific
+    users and their actions within the system.
+    """
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='reviews'
     )

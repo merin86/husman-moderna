@@ -5,7 +5,9 @@ from menu.models import Dish
 
 class DishModelTest(TestCase):
     def setUp(self):
-        # Creates an instance of Dish to use in the tests
+        """
+        Creates an instance of Dish to use in the tests
+        """
         Dish.objects.create(
             name='Test Dish',
             description='Test description',
@@ -14,7 +16,9 @@ class DishModelTest(TestCase):
         )
 
     def test_dish_creation(self):
-        # Tests that a Dish instance was created correctly
+        """
+        Tests that a Dish instance was created correctly
+        """
         dish = Dish.objects.get(name='Test Dish')
         self.assertTrue(isinstance(dish, Dish))
         self.assertEqual(dish.__str__(), 'Test Dish')
@@ -23,6 +27,8 @@ class DishModelTest(TestCase):
         self.assertEqual(dish.category, 'Appetizer')
 
     def test_string_representation(self):
-        # Tests that the string representation of the Dish instance is correct
+        """
+        Tests that the string representation of the Dish instance is correct
+        """
         dish = Dish.objects.get(name='Test Dish')
         self.assertEqual(str(dish), 'Test Dish')

@@ -6,16 +6,22 @@ from about.models import AboutPage
 class AboutViewTests(TestCase):
 
     def setUp(self):
-        # Set up an instance of the AboutPage model for testing
+        """
+        Set up an instance of the AboutPage model for testing
+        """
         AboutPage.objects.create(content="Test content for About Page")
 
     def test_about_view_status_code(self):
-        # Test that the about view returns a 200 status code when accessed
+        """
+        Test that the about view returns a 200 status code when accessed
+        """
         response = self.client.get(reverse('about'))
         self.assertEqual(response.status_code, 200)
 
     def test_about_view_uses_correct_template(self):
-        # Test that the about view uses the correct template
+        """
+        Test that the about view uses the correct template
+        """
         response = self.client.get(reverse('about'))
         self.assertTemplateUsed(response, 'about/about.html')
 

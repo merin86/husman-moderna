@@ -2,8 +2,10 @@ from django.contrib import admin
 from .models import Reservation
 
 
-# Class to handle bookings in the admin interface
 class ReservationAdmin(admin.ModelAdmin):
+    """
+    Class to handle bookings in the admin interface
+    """
     list_display = (
         'date', 'time', 'guests', 'first_name', 'last_name',
         'phone', 'email', 'user'

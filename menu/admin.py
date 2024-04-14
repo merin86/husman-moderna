@@ -1,10 +1,11 @@
 from django.contrib import admin
 from .models import Dish
 
-# Class to customize dishes in the admin interface
-
 
 class DishAdmin(admin.ModelAdmin):
+    """
+    Class to customize dishes in the admin interface
+    """
     list_display = ('name', 'description', 'price', 'category')
 
 

@@ -2,8 +2,10 @@ from django.contrib import admin
 from .models import Review
 
 
-# Admin interface for the Review model
 class ReviewAdmin(admin.ModelAdmin):
+    """
+    Admin interface for the Review model
+    """
     list_display = ('title', 'user', 'rating', 'created_at', 'approved')
     list_filter = ('approved', 'created_at', 'rating')
     search_fields = ('title', 'content')

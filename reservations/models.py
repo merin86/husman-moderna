@@ -3,9 +3,13 @@ from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 
 
-# Reservation class model which stores information about table reservations at
-# a restaurant
 class Reservation(models.Model):
+    """
+    Reservation class model which stores information about table reservations
+    at a restaurant. This model links to the :model:`auth.User`
+    to associate reservations with specific users and their actions within
+    the system.
+    """
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='reservations'
     )

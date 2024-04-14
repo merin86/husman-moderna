@@ -1,9 +1,10 @@
 from django.db import models
 
-# AboutPage model to store content for the About page on the website
-
 
 class AboutPage(models.Model):
+    """
+    AboutPage model to store content for the About page on the website
+    """
     content = models.TextField()
 
     def __str__(self):

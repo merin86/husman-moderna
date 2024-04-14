@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
-# Displays the content of the Home page
-
 
 def home(request):
+    """
+    Displays the content of the Home page
+    """
     return render(request, 'home/index.html')
