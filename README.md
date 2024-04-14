@@ -175,8 +175,6 @@ To host and store the data for the site.
 Used to deploy the project.
 -   [ElephantSQL](https://customer.elephantsql.com/):
 Used to store PostgreSQL database.
--   [Cloudinary](https://cloudinary.com/):
-Used as cloud storage for images uploaded.
 -   [Django](https://www.djangoproject.com/):
 Framework used to create the web page.
 -   [Bootstrap](https://getbootstrap.com/):
