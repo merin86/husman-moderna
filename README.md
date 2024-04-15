@@ -6,7 +6,7 @@ Husman Moderna is a full-stack website created for a fictitious restaurant where
 
 This website not only aims to simplify the reservation process but also fosters a vibrant community of food enthusiasts eager to explore and discuss the culinary delights Husman Moderna has to offer.
 
-![Mockup](static/documentation/)
+![Mockup](static/documentation/mockup.jpg)
 
 ## Content Index
 
