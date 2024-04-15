@@ -42,8 +42,7 @@ This website not only aims to simplify the reservation process but also fosters 
     - [JavaScript Testing](#javascript-testing)
 * [Deployment](#deployment)
     - [GitHub Deployment](#github-deployment)
-    - [Forking](#forking)
-    - [Cloning](#cloning)
+    - [Forking and Cloning](#forking-and-cloning)
     - [Heroku Deployment](#heroku-deployment)
 * [Credits](#credits)
     - [Content](#content)
@@ -343,13 +342,11 @@ The website's codebase is managed through GitHub, which serves as both a storage
 
 Once these steps are completed, the files are updated and available for review within the GitHub repository.
 
-### Forking
+### Forking and Cloning
 
-???
+1. Click the "Fork" button at the top right of the page. This button creates a copy of the repository in your own GitHub account.
+2. After you make your fork, you can clone it to your local computer to start working with it. You do this by opening the terminal and typing the following command: "git clone https://github.com/your-username/repository-name.git"
 
-### Cloning
-
-???
 
 ### Heroku Deployment
 
