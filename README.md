@@ -147,12 +147,11 @@ Here is a picture of the admin front page:
 
 - Creating logic that ensures that double bookings do not take place at the restaurant, i.e. that there is a block if the restaurant is fully booked during a specific day/time.
 
-
 ## Design
 
 ### Colour Scheme
 
-- [Color Picker](https://imagecolorpicker.com/) was used to ensure the same color shades were used throughout the website.
+- [Color Picker](https://imagecolorpicker.com/) was used to ensure the same colour shades were used throughout the website.
 
 - The web page colour theme includes two specific colours as follows. The colours reflect the restaurant's food theme, Swedish home cooking. Beyond these colours, the page is relatively stripped down, colour-wise:
 
@@ -241,7 +240,7 @@ EmailJS is implemented to receive emails when the user wishes to make large rese
 
 The project was developed following Agile principles, with the Project Board and Issues features on GitHub playing a central role in its organization.
 
--   [My Project Board](https://github.com/users/merin86/projects/6)
+- [My Project Board](https://github.com/users/merin86/projects/6)
 
 This instruction video was used to help create the Kanban Board: [Agile Guide](https://www.youtube.com/watch?v=U_dMihBgUNY)
 
@@ -366,7 +365,7 @@ Python files tested:
 - forms
 - tests
 
-Only small errors were detected, such as too few blank lines, line too long and no newline at end of file. All these have now been rectified.
+Only small errors were detected, such as "too few blank lines", "line too long" and "no newline at end of file". All these have now been rectified.
 
 
 ### JavaScript Testing
@@ -381,7 +380,6 @@ JavaScript files tested:
 - JavaScript within my_reservations.html
 
 The code does not generate any warnings.
-
 
 ## Deployment
 
@@ -401,7 +399,6 @@ Once these steps are completed, the files are updated and available for review w
 1. Click the "Fork" button at the top right of the page. This button creates a copy of the repository in your own GitHub account.
 2. After you make your fork, you can clone it to your local computer to start working with it. You do this by opening the terminal and typing the following command: "git clone https://github.com/your-username/repository-name.git"
 
-
 ### Heroku Deployment
 
 1. Create a New Application:
@@ -412,7 +409,7 @@ Once these steps are completed, the files are updated and available for review w
     - Go to the Settings tab.
     - Click Reveal Config Vars and add the necessary credentials.
 3. Add Buildpacks:
-    - Select python and nodejs buildpacks in that order.
+    - Select python buildpacks.
 4. Deploy the Application:
     - Switch to the Deploy tab and select GitHub - Connect to GitHub.
     - Enter your repository name and click Search.
@@ -474,12 +471,13 @@ Video on about page was taken from [Pexels](https://www.pexels.com/) and resized
 
 ## Acknowledgment
 
-I would like to thank my mentor, Jubril Akolade, for all the help he has given me.
+I would like to thank my mentor, Jubril Akolade, for all the help he has given me. I also want to thank Kay Welfare, who always answered questions during the production.
 
 For help with manual testing:
 
 - Annika Magnusson
 - Anthony Oweleke
+- Bengt Liljenroth
 - Björn Johansson
 - Cecilia Magnusson
 - Klas Magnusson
