@@ -14,11 +14,13 @@ This website not only aims to simplify the reservation process but also fosters 
     - [Target Audience](#target-audience)
     - [User Stories](#user-stories)
 * [Features](#features)
+    - [Home Page](#home-page)
     - [Sign Up](#sign-up)
     - [Menu](#menu)
     - [Book Reservation](#book-reservation)
     - [Leave Review](#leave-review)
     - [About Page](#about-page)
+    - [Admin Page](#admin-page)
     - [Future Features](#future-features)
 * [Design](#design)
     - [Colour Scheme](#about-page)
@@ -79,15 +81,67 @@ Users who want to book a table at a restaurant that serves Swedish home cooking.
 
 ## Features
 
+### Home Page
+
+This is the front page where the user ends up first when entering the website:
+
+![Home Page](static/documentation/home-page.jpg)
+
+#### Header
+
+![Header](static/documentation/header.jpg)
+
+#### Footer
+
+![Footer](static/documentation/footer.jpg)
+
 ### Sign Up
+
+Here the user can create an account:
+
+![Sign Up](static/documentation/sign-up.jpg)
 
 ### Menu
 
+Here the user can view the restaurant's menu:
+
+![Menu](static/documentation/menu.jpg)
+
 ### Book Reservation
+
+The booking page where the user can reserve a table for up to 8 people:
+
+![Book Reservation](static/documentation/book-reservation.jpg)
+
+#### Book Large Reservation
+
+After the user has filled in all the fields correctly and pressed send, an e-mail is generated and sent to the developer's e-mail address:
+
+![Large Reservation](static/documentation/large-reservation.jpg)
+
+#### My Reservations
+
+Here the user can view their bookings, as well as edit or delete bookings:
+
+![My Reservations](static/documentation/my-reservations.jpg)
 
 ### Leave Review
 
+This is the review page, where the user can read, create, edit and delete reviews. When a user posts a new review or updates an old one, it must be approved by the admin/superuser before it is visible to other users/visitors:
+
+![Review Page](static/documentation/review-page.jpg)
+
 ### About Page
+
+About page, where users and visitors can read about the restaurant:
+
+![About Page](static/documentation/about-page.jpg)
+
+### Admin Page
+
+Here is a picture of the admin front page:
+
+![Admin Page](static/documentation/admin-page.jpg)
 
 ### Future Features
 
