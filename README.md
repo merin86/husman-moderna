@@ -340,7 +340,7 @@ Performance is somewhat low here as well, due to large images.
 
 HTML validation was completed using [W3 Validator](https://validator.w3.org/)
 
-- When the signup page was run through W3 Validator, these error messages appeared. However, the file that should contain this span does not seem to be visible anymore in my workspace. It should be under some folder generated when Django AllAuth was installed (specifically within the login or signup file). I have not been able to resolve this issue and have therefore added it under [unfixed bugs](#unfixed-bugs).
+- When the signup page was run through W3 Validator, these error messages appeared. However, the file that should contain this span does not seem to be visible anymore in my workspace. It should be under some folder generated when Django AllAuth was installed (specifically within the login or signup file). I have not been able to resolve this issue, not even with the help of my mentor, and have therefore added it under [unfixed bugs](#unfixed-bugs).
 
 ![HTML Sign Up](static/documentation/validating-signup.jpg)
 
